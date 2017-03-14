@@ -6,7 +6,9 @@
             <meta name="viewport" content="width=device-width" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link rel="stylesheet" href="style.css" />
+            <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
             <title> Test design </title>
         </head>
@@ -125,9 +127,15 @@
                         Vous ne les connaissez peut être pas mais ces marques produisent des téléphones haut de gamme d'une grande qualité à prix imbattables. </p>
                         <a class="button main_button blue_button" href="#hexacore"> Plus de détails </a>
                     </div>
-                    <div id="pros2" class="col-lg-3 top_block">
+                    <div id="pros2" class="col-lg-3 top_block slider slick-slider brand_slider">
+                      <div class="slick-slide ">
                         <img class="desc_img" src="pictures/logo_xiaomi.png" alt="Logo Xiaomi" />
+                      </div>
+                      <div class="slick-slide ">
+                        <img class="desc_img" src="pictures/logo_xiaomi.png" alt="Logo Xiaomi" />
+                      </div>
                     </div>
+                    
                  </div>
             </section>
             <section class="main_section link_section fact_section">
@@ -176,5 +184,13 @@
                     </div>
 
                 </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $('.brand_slider').slick({
+                          autoplay: true,
+                          centerMode: true
+                        });
+                    });
+                </script>
         </body>
     </html>
