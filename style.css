@@ -102,6 +102,11 @@ header {
 .centered_block {
     text-align: center;
 }
+.hexa_block {
+    width: 543px;
+    height: 494px;
+    position: relative;
+}
 .promote_block {
     max-width: 30%;
     padding: 0px 25px;
@@ -135,6 +140,68 @@ header {
 
 .secundary_text {
     color: #c1bdb4;
+}
+#box_top {
+    top: 27px;
+    left: 256px;
+}
+#box_bottom {
+    top: 412px;
+    left: 256px;
+}
+#box_top_left {
+    top: 124px;
+    left: 88px;
+}
+#box_top_right {
+    top: 124px;
+    left: 422px;
+}
+
+#box_bottom_left {
+    top: 317px;
+    left: 88px;
+}
+#box_bottom_right {
+    top: 317px;
+    left: 422px;
+}
+.box {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box:hover {
+  -webkit-transform: scale(1.5, 1.5);
+  transform: scale(1.5, 1.5);
+
+}
+
+.box:hover::after {
+    opacity: 1;
 }
 
 .light_blue {
