@@ -16,7 +16,7 @@
     }
 
     .slider {
-        width: 50%;
+        width: 400px;
         margin: 100px auto;
     }
 
@@ -28,15 +28,44 @@
       width: 100%;
     }
 
+    .brand-mini {
+        transform: scale(0.5, 0.5);
+    }
+    .brand {
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
     .slick-prev:before,
     .slick-next:before {
-        color: black;
+        color: red;
     }
   </style>
 </head>
 <body>
 
-  <section class="regular slider">
+    <div class="perso slider">
+      <div>
+        <img class="brand brand-0" src="http://placehold.it/350x300?text=1">
+      </div>
+      <div>
+        <img class="brand brand-1 brand-mini" src="http://placehold.it/350x300?text=2">
+      </div>
+      <div>
+        <img class="brand brand-2 brand-mini" src="http://placehold.it/350x300?text=3">
+      </div>
+      <div>
+        <img class="brand brand-3 brand-mini" src="http://placehold.it/350x300?text=4">
+      </div>
+      <div>
+        <img class="brand brand-4 brand-mini" src="http://placehold.it/350x300?text=5">
+      </div>
+      <div>
+        <img class="brand brand-5 brand-mini" src="http://placehold.it/350x300?text=6">
+      </div>
+  </div>
+
+  <div class="regular slider">
     <div>
       <img src="http://placehold.it/350x300?text=1">
     </div>
@@ -55,7 +84,7 @@
     <div>
       <img src="http://placehold.it/350x300?text=6">
     </div>
-  </section>
+</div>
 
   <section class="center slider">
     <div>
@@ -112,6 +141,22 @@
   <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
     $(document).on('ready', function() {
+        $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            //alert(".brand-"+currentSlide);
+            $(".brand-"+currentSlide).attr("class", "brand brand-"+currentSlide+" brand-mini");
+            $(".brand-"+nextSlide).attr("class", "brand-"+nextSlide+" brand");
+          // left
+        });
+
+        $(".perso").slick({
+          dots: false,
+          infinite: true,
+          centerMode: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        });
+
       $(".regular").slick({
         dots: true,
         infinite: true,

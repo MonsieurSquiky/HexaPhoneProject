@@ -56,6 +56,35 @@ html, body {
 header {
     background: black;
 }
+* {
+  box-sizing: border-box;
+}
+
+.slider {
+    width: 400px;
+    margin: 100px auto;
+}
+
+.slick-slide {
+  margin: 0px ;
+}
+
+.slick-slide img {
+  max-width: 200px;
+}
+
+.brand-mini {
+    transform: scale(0.5, 0.5);
+}
+.brand {
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: red;
+}
 .main_section {
     max-width: 100vw;
 }
