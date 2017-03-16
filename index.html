@@ -55,19 +55,19 @@
                     </div>
                     <div class="inline_block top_block hexa_block">
                         <!--<img src="hexa_flat.png" class="logo_banner" />-->
-                        <div id="box_top" class="box">
+                        <div id="box1" class="box box_top">
 
                         </div>
-                        <div id="box_bottom" class="box">
+                        <div id="box2" class="box box_bottom">
 
                         </div>
-                        <div id="box_top_left" class="box">
+                        <div id="box3" class="box box_top_left">
                         </div>
-                        <div id="box_top_right" class="box">
+                        <div id="box4" class="box box_top_right">
                         </div>
-                        <div id="box_bottom_left" class="box">
+                        <div id="box5" class="box box_bottom_left">
                         </div>
-                        <div id="box_bottom_right" class="box">
+                        <div id="box6" class="box box_bottom_right">
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,30 @@
                           autoplaySpeed: 1500,
                           vertical: false
                         });
+                        randomBox();
                     });
+
+                    function randomBox(currentBox=null) {
+                        var boxNum = "#box"+getRandomInt(1, 7);
+                        var box_class = $(boxNum).attr("class");
+                        $(boxNum).attr("class", box_class+" box_highlight");
+                        if (currentBox != null)
+                            $(currentBox).attr("class", "box");
+                        var currentBox = boxNum;
+                        console.log(currentBox);
+                        window.setTimeout(function() {
+                            $(currentBox).attr("class", "box");
+                        }, 1500);
+                        window.setTimeout(function() {
+                            randomBox(currentBox);
+                        }, 3000);
+                    }
+
+                    function getRandomInt(min, max) {
+                      min = Math.ceil(min);
+                      max = Math.floor(max);
+                      return Math.floor(Math.random() * (max - min)) + min;
+                    }
                 </script>
         </body>
     </html>

@@ -170,28 +170,28 @@ header {
 .secundary_text {
     color: #c1bdb4;
 }
-#box_top {
+#box1 {
     top: 27px;
     left: 256px;
 }
-#box_bottom {
+#box2{
     top: 412px;
     left: 256px;
 }
-#box_top_left {
+#box3 {
     top: 124px;
     left: 88px;
 }
-#box_top_right {
+#box4 {
     top: 124px;
     left: 422px;
 }
 
-#box_bottom_left {
+#box5 {
     top: 317px;
     left: 88px;
 }
-#box_bottom_right {
+#box6 {
     top: 317px;
     left: 422px;
 }
@@ -223,13 +223,13 @@ header {
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.box:hover {
+.box:hover, .box_highlight{
   -webkit-transform: scale(1.5, 1.5);
   transform: scale(1.5, 1.5);
 
 }
 
-.box:hover::after {
+.box:hover::after, .box_highlight::after {
     opacity: 1;
 }
 
