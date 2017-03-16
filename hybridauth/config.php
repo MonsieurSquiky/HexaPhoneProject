@@ -9,62 +9,62 @@
 //	HybridAuth Config file: http://hybridauth.sourceforge.net/userguide/Configuration.html
 // ----------------------------------------------------------------------------------------
 
-return 
+return
 	array(
-		"base_url" => "http://localhost/hybridauth-git/hybridauth/", 
+		"base_url" => "http://moryfodecisse.free.fr/hybridauth/",
 
-		"providers" => array ( 
+		"providers" => array (
 			// openid providers
 			"OpenID" => array (
 				"enabled" => true
 			),
 
-			"Yahoo" => array ( 
-				"enabled" => true,
+			"Yahoo" => array (
+				"enabled" => false,
 				"keys"    => array ( "key" => "", "secret" => "" ),
 			),
 
-			"AOL"  => array ( 
-				"enabled" => true 
+			"AOL"  => array (
+				"enabled" => false
 			),
 
-			"Google" => array ( 
+			"Google" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ), 
+				"keys"    => array ( "id" => "703050729147-bq0k81dl4juucj8ugbfsd75p65p6u5op.apps.googleusercontent.com", "secret" => "uR26s9-QEENe_VhV1KPS38tU" ),
 			),
 
-			"Facebook" => array ( 
+			"Facebook" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ),
+				"keys"    => array ( "id" => "1751275185189091", "secret" => "14a75a66886de7d2c44305c4744be748" ),
 				"trustForwarded" => false
 			),
 
-			"Twitter" => array ( 
-				"enabled" => true,
-				"keys"    => array ( "key" => "", "secret" => "" ) 
+			"Twitter" => array (
+				"enabled" => false,
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
 			// windows live
-			"Live" => array ( 
-				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ) 
+			"Live" => array (
+				"enabled" => false,
+				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 
-			"LinkedIn" => array ( 
-				"enabled" => true,
-				"keys"    => array ( "key" => "", "secret" => "" ) 
+			"LinkedIn" => array (
+				"enabled" => false,
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
 			"Foursquare" => array (
-				"enabled" => true,
-				"keys"    => array ( "id" => "", "secret" => "" ) 
+				"enabled" => false,
+				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 		),
 
 		// If you want to enable logging, set 'debug_mode' to true.
 		// You can also set it to
 		// - "error" To log only error messages. Useful in production
-		// - "info" To log info and error messages (ignore debug messages) 
+		// - "info" To log info and error messages (ignore debug messages)
 		"debug_mode" => false,
 
 		// Path to file writable by the web server. Required if 'debug_mode' is not false
