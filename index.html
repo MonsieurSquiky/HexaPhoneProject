@@ -140,10 +140,10 @@
             </section>
             <section class="main_section link_section fact_section">
                 <div class="wrapper row highlight_fact">
-                    <div id="pros2" class="col-lg-3 top_block ">
+                    <div id="pros2" class="col-5 col-lg-3 top_block ">
                         <img class="desc_img" src="pictures/fun_fact.png" alt="Logo Xiaomi" />
                     </div>
-                    <div id="pros1" class="col-lg-9  inline_block">
+                    <div id="pros1" class="col-4 col-lg-9  inline_block">
                         <span class="promote_title"> Le saviez vous ? </span>
                         <p class="promote"> Apple et Samsung utilisent des sous-traitants (tels que Foxconn par exemple)
                         pour fabriquer leurs appareils. Et les marques chinoises que nous vous proposons font appel aux
@@ -195,7 +195,6 @@
                             $(".brand-"+nextSlide).attr("class", "brand-"+nextSlide+" brand");
                           // left
                         });
-
                         $(".brand_slider").slick({
                           dots: false,
                           infinite: true,
@@ -209,7 +208,6 @@
                         });
                         randomBox();
                     });
-
                     function randomBox(currentBox=null) {
                         var boxNum = "#box"+getRandomInt(1, 7);
                         var box_class = $(boxNum).attr("class");
@@ -225,7 +223,6 @@
                             randomBox(currentBox);
                         }, 3000);
                     }
-
                     function getRandomInt(min, max) {
                       min = Math.ceil(min);
                       max = Math.floor(max);
@@ -233,4 +230,4 @@
                     }
                 </script>
         </body>
-    </html>
+</html>

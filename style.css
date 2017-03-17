@@ -114,9 +114,6 @@ header {
     position: relative;
     top: -240px;
     padding-top: 175px;
-    background-image: url("pictures/smartphone_background.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
     padding-bottom: 150px;
 
 }
@@ -458,15 +455,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 
 }
 
-@media all and (max-device-width: 480px) {
+@media all and (max-width: 480px) {
 
-    .wrapper {
-        flex-direction: column-reverse;
-        height:auto;
-    }
-    .stats_wrapper {
-        flex-direction: column;
-    }
     .top_wrapper {
         padding: 40px 20px;
         text-align: center;
@@ -527,12 +517,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 }
 
 @media all and (max-width: 767px) {
+    .main_section, .link_section {
+        position: static;
+        max-height: 10000px;
+        padding: 0px;
+        border-radius: 0px ;
+    }
+    .highlight_fact {
+        border-radius: 0px;
+        padding: 0px 10px 15px 10px;
+    }
+    .smartphone_section {
+        background-image: none;
+    }
+
     .wrapper {
-        flex-direction: column-reverse;
+        flex-direction: column;
         height:auto;
     }
-    .stats_wrapper {
-        flex-direction: column;
+    .top_wrapper {
+        flex-direction: column-reverse;
     }
     .top_wrapper {
         padding: 40px 20px;
@@ -601,6 +605,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
         max-width: 90vw;
         min-height: 450px;
     }
+    .smartphone_section {
+        background-image: none;
+    }
     .big_title {
         font-size: 34px;
     }
@@ -636,6 +643,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 @media all and (min-width: 1280px) {
     .wrapper {
         max-width: 80vw;
+    }
+    .smartphone_section {
+      background-image: url("pictures/smartphone_background.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
     }
     .top_wrapper {
         max-width: 70vw;
