@@ -4,11 +4,14 @@
             <meta charset="utf-8" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <meta name="viewport" content="width=device-width" />
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link rel="stylesheet" type="text/css" href="./slick/slick.css">
             <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
             <link rel="stylesheet" href="style.css" />
-            <title> Test design </title>
+            <link rel="stylesheet" href="hexastyle.css" />
+
+            <title> Choisis un smartphone </title>
         </head>
         <body>
             <header>
@@ -20,11 +23,11 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                           </button>
-                          <a class="navbar-brand" href="#">WebSiteName</a>
+                          <a class="navbar-brand" href="#"> HexaPhone </a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                           <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="#">Accueil</a></li>
                             <li><a href="#">Page 1</a></li>
                             <li><a href="#">Page 2</a></li>
                             <li><a href="#">Page 3</a></li>
@@ -39,7 +42,7 @@
             </header>
 
             <section class="main_section top_section light_blue">
-                <div class="wrapper top_wrapper">
+                <div class="wrapper ">
                     <div class="inline_block text_block top_block">
                         <p class="big_title">
                             Un besoin,<br>
@@ -52,21 +55,27 @@
                         </p>
                         <a class="button main_button" href="#stats"> En savoir plus </a>
                     </div>
-                    <div class="inline_block top_block hexa_block">
-                        <!--<img src="hexa_flat.png" class="logo_banner" />-->
-                        <div id="box1" class="box box_top">
-
-                        </div>
-                        <div id="box2" class="box box_bottom">
-
-                        </div>
-                        <div id="box3" class="box box_top_left">
-                        </div>
-                        <div id="box4" class="box box_top_right">
-                        </div>
-                        <div id="box5" class="box box_bottom_left">
-                        </div>
-                        <div id="box6" class="box box_bottom_right">
+                    <div class="inline_block top_block">
+                        <div id="hexazone" class="hexa_block  ">
+                            <!--<img src="hexa_flat.png" class="logo_banner" />-->
+                            <div id="box1" class="box box-top">
+                                <img alt="Qualité de l'écran"  src="pictures/logo_ecran.png" />
+                            </div>
+                            <div id="box2" class="box box-bottom">
+                                <img alt="Connectivité du smartphone"  src="pictures/logo_connectivite.png" />
+                            </div>
+                            <div id="box3" class="box box-top-left">
+                                <img alt="Autonomie du smartphone"  src="pictures/logo_batterie.png" />
+                            </div>
+                            <div id="box4" class="box box-top-right">
+                                <img alt="Puissance du smartphone"  src="pictures/logo_performances.png" />
+                            </div>
+                            <div id="box5" class="box box-bottom-left">
+                                <img alt="Résistance du smartphone"  src="pictures/logo_solidite.png" />
+                            </div>
+                            <div id="box6" class="box box-bottom-right">
+                                <img alt="Qualité de la caméra"  src="pictures/logo_camera.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,11 +101,13 @@
                 </div>
             </section>
             -->
+
+            <!--
             <section id="stats" class="main_section link_section dark_grey">
-                <!--
+
                 <div class="title_block">
                     <p class="section_title turquoise_title"> Notre gamme de smartphone en chiffres </p>
-                </div> -->
+                </div>
                 <div class="wrapper stats_wrapper">
                         <div class="inline_block">
                             <img class="stats_img" src="pictures/flat_phone.png" />
@@ -113,13 +124,14 @@
                         </div>
                 </div>
             </section>
+            -->
             <section id="speech" class="main_section smartphone_section .container">
                 <div class="title_block">
                     <p class="section_title blue_title"> D'où viennent nos smartphones ? </p>
                 </div>
                 <div class="wrapper row">
                     <div id="pros1" class="col-lg-6  inline_block">
-                        <span class="promote_title"> Chinois, mais fiable </span>
+                        <span class="promote_title"> Il y a moins bien, mais c'est plus cher </span>
                         <p class="promote"> Les smartphones que nous vendont sont des Xiaomi, des LeEco, des Lenovo et ceux de bien d'autres marques chinoises.
                         Vous ne les connaissez peut être pas mais ces marques produisent des téléphones haut de gamme d'une grande qualité à prix imbattables. </p>
                         <a class="button main_button blue_button" href="#hexacore"> Plus de détails </a>
@@ -138,6 +150,8 @@
 
                  </div>
             </section>
+
+            <!--
             <section class="main_section link_section fact_section">
                 <div class="wrapper row highlight_fact">
                     <div id="pros2" class="col-lg-3 top_block ">
@@ -152,6 +166,7 @@
 
                  </div>
             </section>
+            -->
             <section id="speech" class="main_section dark_grey french_section">
                 <div class="title_block">
                     <p class="section_title blue_title"> Pourquoi acheter chez nous ? </p>
@@ -189,6 +204,11 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                 <script type="text/javascript">
                     $(document).ready(function(){
+                        $( window ).resize(function() {
+                            setHexazone();
+                        });
+
+
                         $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
                             //alert(".brand-"+currentSlide);
                             $(".brand-"+currentSlide).attr("class", "brand brand-"+currentSlide+" brand-mini");
@@ -207,19 +227,64 @@
                           autoplaySpeed: 1500,
                           vertical: false
                         });
+                        setHexazone();
                         randomBox();
                     });
+
+                    function setHexazone () {
+                        var points= {
+                            "box-top" : [0.471, 0.0547],
+                            "box-top-right" : [0.777, 0.251],
+                            "box-top-left" : [0.162, 0.251],
+                            "box-bottom" : [0.471, 0.834],
+                            "box-bottom-right" : [0.777, 0.642],
+                            "box-bottom-left" : [0.162, 0.642]
+                        };
+
+                        var parent =  $( "#hexazone" ).parent();
+                        var viewportWidth = parseInt(parent.width(), 10);
+                        var viewportHeight = parseInt(parent.height(), 10);
+                     
+                        var width = 543;
+                        var height = 494;
+
+                        if (width > viewportWidth || height > viewportHeight ) {
+                            var width = viewportWidth;
+                            var height = viewportHeight;
+
+                            if (width < height)
+                                height = Math.round(width*0.91);
+                            else
+                                width = Math.round(height*1.1);
+                        }
+
+                        $( "#hexazone" ).css("width", width);
+                        $( "#hexazone" ).css("height", height);
+
+                        for (var key in points) {
+                            var x = Math.round(points[key][0] * width);
+                            var y = Math.round(points[key][1] * height);
+
+                            $( "."+key ).css("top", y);
+                            $( "."+key ).css("left", x);
+
+                        }
+
+
+                    }
 
                     function randomBox(currentBox=null) {
                         var boxNum = "#box"+getRandomInt(1, 7);
                         var box_class = $(boxNum).attr("class");
+                        var current_box_class = $(currentBox).attr("class");
+
                         $(boxNum).attr("class", box_class+" box_highlight");
                         if (currentBox != null)
-                            $(currentBox).attr("class", "box");
+                            $(currentBox).attr("class", current_box_class);
                         var currentBox = boxNum;
-                        console.log(currentBox);
+
                         window.setTimeout(function() {
-                            $(currentBox).attr("class", "box");
+                            $(currentBox).attr("class", box_class);
                         }, 1500);
                         window.setTimeout(function() {
                             randomBox(currentBox);
