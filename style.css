@@ -54,15 +54,18 @@ html, body {
     font-family: Whitney SSm A,Whitney SSm B,Helvetica,Arial;
 }
 header {
-    background: black;
+    background: white;
 }
 * {
   box-sizing: border-box;
 }
 
 .slider {
-    width: 400px;
-    margin: 100px auto;
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex; /* contexte sur le parent */
+flex-direction: column; /* direction d'affichage verticale */
+justify-content: center; /* alignement vertical */
 }
 
 .slick-slide {
@@ -87,10 +90,16 @@ header {
 }
 .main_section {
     max-width: 100vw;
+    min-height: 90vh;
     display: flex;
 }
 .top_section {
     padding-bottom: 100px;
+}
+
+.height_section {
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .wrapper {
 
@@ -138,6 +147,8 @@ header {
 }
 .text_block {
     max-width: 450px;
+    margin: 50px auto;
+    text-align: center;
 }
 .top_block {
     padding: 20px;
