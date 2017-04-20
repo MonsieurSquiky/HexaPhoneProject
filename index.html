@@ -41,9 +41,9 @@
                 </nav>
             </header>
 
-            <section class="main_section light_blue">
-                <div class="wrapper row">
-                    <div class=" text_block col-xs-12 col-sm-6 col-md-6 col-lg-5">
+            <section class="main_section height_section light_blue">
+                <div class="wrapper wrapper_reverse row">
+                    <div class=" text_block  col-xs-12 col-sm-6 col-md-6 col-lg-5">
                         <p class="big_title">
                             Un besoin,<br>
                             Un smartphone
@@ -55,7 +55,7 @@
                         </p>
                         <a class="button main_button" href="#stats"> En savoir plus </a>
                     </div>
-                    <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-7">
+                    <div class="alone_block top_hexa col-xs-12 col-sm-6 col-md-6 col-lg-7">
                         <div id="hexazone" class="hexa_block  ">
                             <!--<img src="hexa_flat.png" class="logo_banner" />-->
                             <div id="box1" class="box box-top">
@@ -125,41 +125,43 @@
                 </div>
             </section>
             -->
-            <section id="speech" class="height_section .container" style="background-color:#ebeff2">
+            <section class="main_section height_section .container" style="background-color:#ebeff2">
                 <!--
                 <div class="title_block">
                     <p class="section_title blue_title"> D'où viennent nos smartphones ? </p>
                 </div>
                 -->
                 <div class="wrapper row">
-                    <div id="pros1" class="text_block col-sm-6 col-md-7 col-lg-6 col-xs-12">
+
+                    <div class="inline_block col-lg-4 col-sm-6 col-md-5 col-xs-12">
+                        <div class=" slider slick-slider brand_slider">
+                            <div class="slick-slide ">
+                            <img class="desc_img brand brand-0" src="pictures/logo_xiaomi.png" alt="Logo Xiaomi" />
+                            </div>
+                            <div class="slick-slide ">
+                            <img class="desc_img brand brand-1 brand-mini" src="pictures/logo_lenovo.png" alt="Logo Lenovo" />
+                            </div>
+                            <div class="slick-slide ">
+                            <img class="desc_img brand brand-2 brand-mini" src="pictures/logo_leeco.png" alt="Logo Leeco" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" text_block col-sm-6 col-md-7 col-lg-8 col-xs-12">
                         <span class="promote_title"> Il y a moins bien, mais c'est plus cher </span>
                         <p class="promote"> Les smartphones que nous vendont sont des Xiaomi, des LeEco, des Lenovo et ceux de bien d'autres marques chinoises.
                         Vous ne les connaissez peut être pas mais ces marques produisent des téléphones haut de gamme d'une grande qualité à prix imbattables. </p>
                         <a class="button main_button blue_button" href="#hexacore"> Plus de détails </a>
                     </div>
-                    <div id="pros2" class="col-lg-4 col-sm-6 col-md-5 col-xs-12 slider slick-slider brand_slider">
-                      <div class="slick-slide ">
-                        <img class="desc_img brand brand-0" src="pictures/logo_xiaomi.png" alt="Logo Xiaomi" />
-                      </div>
-                      <div class="slick-slide ">
-                        <img class="desc_img brand brand-1 brand-mini" src="pictures/logo_lenovo.png" alt="Logo Lenovo" />
-                      </div>
-                      <div class="slick-slide ">
-                        <img class="desc_img brand brand-2 brand-mini" src="pictures/logo_leeco.png" alt="Logo Leeco" />
-                      </div>
-                    </div>
-
                  </div>
             </section>
 
             <!--
             <section class="main_section link_section fact_section">
                 <div class="wrapper row highlight_fact">
-                    <div id="pros2" class="col-lg-3 top_block ">
+                    <div id="pros2" class="col-5 col-lg-3 top_block ">
                         <img class="desc_img" src="pictures/fun_fact.png" alt="Logo Xiaomi" />
                     </div>
-                    <div id="pros1" class="col-lg-9  inline_block">
+                    <div id="pros1" class="col-4 col-lg-9  inline_block">
                         <span class="promote_title"> Le saviez vous ? </span>
                         <p class="promote"> Apple et Samsung utilisent des sous-traitants (tels que Foxconn par exemple)
                         pour fabriquer leurs appareils. Et les marques chinoises que nous vous proposons font appel aux
@@ -256,18 +258,23 @@
                             $(".brand-"+nextSlide).attr("class", "brand-"+nextSlide+" brand");
                           // left
                         });
-
                         $(".brand_slider").slick({
-                          dots: false,
-                          infinite: true,
-                          centerMode: true,
-                          arrows: false,
-                          slidesToShow: 1,
-                          slidesToScroll: 1,
-                          variableWidth: true,
-                          autoplay: true,
-                          autoplaySpeed: 1500,
-                          vertical: false
+                            centerMode: true,
+                            autoplay: true,
+                            autoplaySpeed: 1500,
+                            arrows: false
+                            /*
+                            dots: false,
+                            infinite: true,
+                            centerMode: true,
+                            arrows: false,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            variableWidth: true,
+                            autoplay: true,
+                            autoplaySpeed: 1500,
+                            vertical: false
+                            */
                         });
                         setHexazone();
                         randomBox();
@@ -336,7 +343,6 @@
                             randomBox(currentBox);
                         }, 3000);
                     }
-
                     function getRandomInt(min, max) {
                       min = Math.ceil(min);
                       max = Math.floor(max);
@@ -344,4 +350,4 @@
                     }
                 </script>
         </body>
-    </html>
+</html>

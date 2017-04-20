@@ -50,6 +50,7 @@ table {
 
 html, body {
     width: 100%;
+    max-width: 100vw;
     font-family: Roboto, Arial, sans-serif;
     font-family: Whitney SSm A,Whitney SSm B,Helvetica,Arial;
 }
@@ -61,11 +62,11 @@ header {
 }
 
 .slider {
-    max-width: 400px;
+
     margin: 20px auto;
     display: flex; /* contexte sur le parent */
-flex-direction: column; /* direction d'affichage verticale */
-justify-content: center; /* alignement vertical */
+  flex-direction: column; /* direction d'affichage verticale */
+  justify-content: center; /* alignement vertical */
 }
 
 .slick-slide {
@@ -73,7 +74,8 @@ justify-content: center; /* alignement vertical */
 }
 
 .slick-slide img {
-  max-width: 200px;
+  max-width: 150px;
+  margin: auto;
 }
 
 .brand-mini {
@@ -90,11 +92,8 @@ justify-content: center; /* alignement vertical */
 }
 .main_section {
     max-width: 100vw;
-    min-height: 90vh;
+
     display: flex;
-}
-.top_section {
-    padding-bottom: 100px;
 }
 
 .height_section {
@@ -102,7 +101,7 @@ justify-content: center; /* alignement vertical */
     padding-bottom: 60px;
 }
 .wrapper {
-
+    max-width: 100% !important;
     margin:  auto;
     padding: 20px 0px;
     display: flex;
@@ -122,12 +121,6 @@ justify-content: center; /* alignement vertical */
 }
 .smartphone_section {
     position: relative;
-
-    background-image: url("pictures/smartphone_background.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-
-
 }
 
 .wide_wrap {
@@ -135,20 +128,21 @@ justify-content: center; /* alignement vertical */
 }
 .inline_block {
     display: inline-block;
-    margin: auto;
+    margin: 0px auto;
 }
 .centered_block {
     text-align: center;
 }
 
 .promote_block {
-    max-width: 30%;
+    max-width: 90%;
     padding: 0px 25px;
 }
 .text_block {
     max-width: 450px;
-    margin: 50px auto;
+    margin: 20px auto;
     text-align: center;
+    margin-top: 20px;
 }
 .top_block {
     padding: 20px;
@@ -403,15 +397,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 
 }
 
-@media all and (max-device-width: 480px) {
+@media all and (max-width: 480px) {
 
-    .wrapper {
-        flex-direction: column-reverse;
-        height:auto;
-    }
-    .stats_wrapper {
-        flex-direction: column;
-    }
     .top_wrapper {
         padding: 40px 20px;
         text-align: center;
@@ -472,24 +459,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 }
 
 @media all and (max-width: 767px) {
+    .main_section, .link_section {
+        position: static;
+        max-height: 10000px;
+        padding: 0px;
+        border-radius: 0px ;
+    }
+    .highlight_fact {
+        border-radius: 0px;
+        padding: 0px 10px 15px 10px;
+    }
+    .hexa_block {
+        left: -15px;
+    }
+    .smartphone_section {
+        background-image: none;
+    }
+
     .wrapper {
-        flex-direction: column-reverse;
+        flex-direction:  column;
         height:auto;
     }
-    .stats_wrapper {
-        flex-direction: column;
+    .wrapper_reverse {
+        flex-direction: column-reverse;
     }
     .top_wrapper {
         padding: 40px 20px;
         text-align: center;
     }
-    .promote_block {
-        max-width: 50vw;
-        padding: 20px 0px 20px 0px;
-    }
-    .title_block {
-        padding-bottom: 20px;
-    }
+
     .section_title {
         max-width: 70vw;
     }
@@ -500,24 +498,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
         background: linear-gradient(to top,  #1b7dd9 2%,#004da0 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b7dd9', endColorstr='#1058aa',GradientType=1 ); /* IE6-9 */
     }
-    .frost_blue {
-        color: white;
-        background: #000428; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to bottom, #000428 , #004e92); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to bottom, #000428 , #004e92); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    }
-    .stats_img {
-        max-width: 80vw;
-    }
-    .stats_content {
-        padding: 10px;
-    }
+
 }
 
 @media all and (max-width: 480px) {
     .wrapper, .top_wrapper, .promote_block, .hexa_block {
         max-width: 100vw;
+    }
+    .hexa_block {
+        left: -20px;
+    }
+    .top_hexa {
+        margin-bottom: 20px  ;
     }
     .top_block {
         padding: 10px;
@@ -539,12 +532,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
         font-size: 20px;
     }
 
+
 }
 @media all and (min-width: 768px) and (max-width: 959px) {
     .top_wrapper {
         height: 60vh;
         max-width: 90vw;
         min-height: 450px;
+    }
+    .smartphone_section {
+        background-image: none;
     }
     .big_title {
         font-size: 34px;
@@ -560,6 +557,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
     .hexa_block {
         min-width: 400px;
 
+    }
+    .slick-slide img {
+      max-width: 200px;
+      margin: auto;
     }
 }
 
@@ -577,12 +578,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
         min-width: 352px;
 
     }
+    .slick-slide img {
+      max-width: 200px;
+    }
+    .text_block {
+      text-align: left ;
+    }
 }
 @media all and (min-width: 1280px) {
-    .wrapper {
-        max-width: 80vw;
+    .alone_block {
+        max-width: 50vw;
+        padding-left: 75px;
+        padding-right: 75px;
     }
-    .top_wrapper {
-        max-width: 70vw;
+    .text_block {
+      text-align: left ;
     }
 }
