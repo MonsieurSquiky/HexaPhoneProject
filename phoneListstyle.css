@@ -1,0 +1,29 @@
+.phone_stat {
+
+
+    max-width: 350px;
+    min-width: 270px;
+    color: black;
+    margin:20px;
+    background-color: white;
+    border-radius: 10px;
+    max-height: 250px;
+}
+.flex-row {
+    display: flex; /* contexte sur le parent */
+}
+.phoneList_col {
+    margin: auto;
+}
+.phone_title {
+    text-align: center;
+    padding-top: 15px;
+}
+@media all and (min-width: 480px) {
+    .phone_stat {
+        width: 90%;
+        max-width: 580px;
+        max-height: none;
+        margin: 20px auto;
+    }
+}

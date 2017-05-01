@@ -9,7 +9,7 @@ catch (Exception $e) {
 }
 
 $design = $_GET['design'];
-$performance = $_GET['puissance'];
+$puissance = $_GET['puissance'];
 $camera = $_GET['camera'];
 $connectivite = $_GET['connectivite'];
 $solidite = $_GET['solidite'];
@@ -27,8 +27,8 @@ while ($donnees = $phone_data->fetch()) {
         $score += $donnees['design'];
         $nb_critere += 1;
     }
-    if ($performance == 1) {
-        $score += $donnees['performance'];
+    if ($puissance == 1) {
+        $score += $donnees['puissance'];
         $nb_critere += 1;
     }
     if ($camera == 1) {
@@ -36,7 +36,7 @@ while ($donnees = $phone_data->fetch()) {
         $nb_critere += 1;
     }
     if ($connectivite == 1) {
-        $score += $donnees['connectivite'];
+        $score += $donnees['reseau'];
         $nb_critere += 1;
     }
     if ($solidite == 1) {
@@ -54,8 +54,8 @@ while ($donnees = $phone_data->fetch()) {
         design: ". $donnees['design'] .",
         batterie: ". $donnees['batterie'] .",
         camera: ". $donnees['camera'] .",
-        performance: ". $donnees['performance'] .",
-        connectivite: ". $donnees['connectivite'] .",
+        puissance: ". $donnees['puissance'] .",
+        reseau: ". $donnees['reseau'] .",
         solidite: ". $donnees['solidite'] .",
         prix: ". $donnees['prix'] .",
         note: ". $donnees['note'] ."
@@ -88,5 +88,5 @@ while ($donnees = $phone_data->fetch()) {
 
 }
 
-echo $selection[0];
+echo serialize($selection);
 ?>

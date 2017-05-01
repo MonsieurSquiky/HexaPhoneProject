@@ -10,7 +10,8 @@
             <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
             <link rel="stylesheet" href="style.css" />
             <link rel="stylesheet" href="hexastyle.css" />
-
+            <link rel="stylesheet" href="phoneListstyle.css" />
+            <link rel="stylesheet" href="hexacharts.css" />
             <title> Choisis un smartphone </title>
         </head>
         <body>
@@ -59,22 +60,39 @@
                         <div id="hexazone" class="hexa_block  ">
                             <!--<img src="hexa_flat.png" class="logo_banner" />-->
                             <div id="box1" class="box box-top">
-                                <img alt="Qualité de l'écran"  src="pictures/logo_ecran.png" />
+                                <img id="box1-img" alt="Qualité de l'écran"  src="pictures/logo_ecran.png" />
+                                <img id="box1-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_ecran_picked.png" />
+                                <span class="critere"> Design </span>
                             </div>
-                            <div id="box2" class="box box-bottom">
-                                <img alt="Connectivité du smartphone"  src="pictures/logo_connectivite.png" />
+                            <div id="box2" class="box box-top-right">
+                                <img id="box2-img" alt="Puissance du smartphone"  src="pictures/logo_performances.png" />
+                                <img id="box2-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_performances_picked.png" />
+                                <span class="critere"> Puissance </span>
                             </div>
-                            <div id="box3" class="box box-top-left">
-                                <img alt="Autonomie du smartphone"  src="pictures/logo_batterie.png" />
+                            <div id="box3" class="box box-bottom-right">
+                                <img id="box3-img" alt="Qualité de la caméra"  src="pictures/logo_camera.png" />
+                                <img id="box3-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_camera_picked.png" />
+                                <span class="critere"> Caméra </span>
                             </div>
-                            <div id="box4" class="box box-top-right">
-                                <img alt="Puissance du smartphone"  src="pictures/logo_performances.png" />
+                            <div id="box4" class="box box-bottom">
+                                <img id="box4-img" alt="Connectivité du smartphone"  src="pictures/logo_connectivite.png" />
+                                <img id="box4-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_connectivite_picked.png" />
+                                <span class="critere"> Réseau </span>
                             </div>
                             <div id="box5" class="box box-bottom-left">
-                                <img alt="Résistance du smartphone"  src="pictures/logo_solidite.png" />
+                                <img id="box5-img" alt="Résistance du smartphone"  src="pictures/logo_solidite.png" />
+                                <img id="box5-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_solidite_picked.png" />
+                                <span class="critere"> Solidité </span>
                             </div>
-                            <div id="box6" class="box box-bottom-right">
-                                <img alt="Qualité de la caméra"  src="pictures/logo_camera.png" />
+                            <div id="box6" class="box box-top-left">
+                                <img id="box6-img" alt="Autonomie du smartphone"  src="pictures/logo_batterie.png" />
+                                <img id="box6-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_batterie_picked.png" />
+                                <span class="critere"> Batterie </span>
+                            </div>
+
+                            <div class="box-center">
+                                <img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
+                                <span class="liste_selection"> Tout est important </span>
                             </div>
                         </div>
                     </div>
@@ -133,7 +151,7 @@
                 -->
                 <div class="wrapper row">
 
-                    <div class="inline_block col-lg-4 col-sm-6 col-md-5 col-xs-12">
+                    <div class=" col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class=" slider slick-slider brand_slider">
                             <div class="slick-slide ">
                             <img class="desc_img brand brand-0" src="pictures/logo_xiaomi.png" alt="Logo Xiaomi" />
@@ -146,7 +164,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" text_block col-sm-6 col-md-7 col-lg-8 col-xs-12">
+                    <div class="text_block nomargin col-sm-6 col-md-5 col-lg-4 col-xs-12">
                         <span class="promote_title"> Il y a moins bien, mais c'est plus cher </span>
                         <p class="promote"> Les smartphones que nous vendont sont des Xiaomi, des LeEco, des Lenovo et ceux de bien d'autres marques chinoises.
                         Vous ne les connaissez peut être pas mais ces marques produisent des téléphones haut de gamme d'une grande qualité à prix imbattables. </p>
@@ -205,149 +223,258 @@
                     </div>
 
                 </div>
-                <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-                <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-                <script type="text/javascript">
-                    var searchname = {  "design": false,
-                                "puissance": false,
-                                "camera": false,
-                                "reseau": false,
-                                "solidite": false,
-                                "batterie": false};
+            </section>
+            <div class="disable_area">
+                <div class="phone_stat row">
+                    <div class="phone_title">
+                        <h2> Xiaomi Redmi Note 4</h2>
+                    </div>
+                    <div class="row flex-row">
+                        <div class="img_block phoneList_col col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                            <img class="stats_img" src="pictures/flat_phone.png" />
+                        </div>
+                        <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 col-xs-8 stats_content">
 
-                    var search = [0, 0, 0, 0, 0, 0];
+                            <p class=""> - 5,5 pouces </p>
+                            <p class=""> - 32Go / 64Go/ 128Go </p>
+                            <p class=""> - Dual-Sim / Carte SD </p>
 
-                    $(document).ready(function(){
-                        $( window ).resize(function() {
-                            setHexazone();
-                        });
+                            <span class="button main_button price"> 199€ </span>
+                        </div>
+                        <!--
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                            <img class="stats_img" src="test5.png" />
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <div class="phone_stat row">
+                        <div class="  col-sm-4 col-md-4 col-lg-4 col-xs-6">
 
-                        $( ".box" ).click(function() {
-                            var num = $(this).attr('id')[3];
-                            search[num-1] = (search[num-1]==0) ? 1 : 0;
-                        });
-                        $( "#box1" ).click(function(e) {
-                            e.preventDefault();
-                            console.log(search);
-                            var critere =JSON.stringify(search);
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 stats_content">
+                            <h2> Xiaomi Redmi Note 4</h2>
+                            <p class=""> - 5,5 pouces </p>
+                            <p class=""> - 32Go / 64Go/ 128Go </p>
+                            <p class=""> - Dual-Sim / Carte SD </p>
 
-                            $.ajax({
-                                url: 'phone_selector.php',
-                                type: 'GET',
-                                data: {
-                                    design: search[0],
-                                    puissance: search[1],
-                                    camera: search[2],
-                                    connectivite: search[3],
-                                    solidite: search[4],
-                                    batterie: search[5]
-                                },
-                                dataType: 'text',
-                                success: function(data, statut) {
-                                    console.log(data);
-                                },
-                                error: function(resultat, statut, erreur) {
-                                    console.log(erreur);
-                                }
-                            });
-                        });
-                        $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-                            //alert(".brand-"+currentSlide);
-                            $(".brand-"+currentSlide).attr("class", "brand brand-"+currentSlide+" brand-mini");
-                            $(".brand-"+nextSlide).attr("class", "brand-"+nextSlide+" brand");
-                          // left
-                        });
-                        $(".brand_slider").slick({
-                            centerMode: true,
-                            autoplay: true,
-                            autoplaySpeed: 1500,
-                            arrows: false
-                            /*
-                            dots: false,
-                            infinite: true,
-                            centerMode: true,
-                            arrows: false,
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            variableWidth: true,
-                            autoplay: true,
-                            autoplaySpeed: 1500,
-                            vertical: false
-                            */
-                        });
+                            <span class="button main_button price"> 199€ </span>
+                        </div>
+                        <!--
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                            <img class="stats_img" src="test5.png" />
+                        </div>
+                        -->
+                </div>
+                <div class="phone_stat">
+                    <div class="phone_title">
+                        <h2> Xiaomi Redmi Note 4</h2>
+                    </div>
+                    <div class="row flex-row">
+                        <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-2 col-xs-3">
+                            <img class="stats_img" src="pictures/flat_phone.png" />
+                        </div>
+                        <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                            <div class="stats_content autoblock">
+                                <p class=""> - 5,5 pouces </p>
+                                <p class=""> - 32Go / 64Go/ 128Go </p>
+                                <p class=""> - Dual-Sim / Carte SD </p>
+                                <span class="button main_button price"> 199€ </span>
+                            </div>
+                        </div>
+                        <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 col-xs-5">
+                            <div id="container" class="hexachart"> </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+            <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/highcharts-more.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="hexacharts.js"> </script>
+            <script type="text/javascript">
+                var searchname = {  "design": false,
+                            "puissance": false,
+                            "camera": false,
+                            "reseau": false,
+                            "solidite": false,
+                            "batterie": false};
+
+                var search = [0, 0, 0, 0, 0, 0];
+                var highlight = [0, 0, 0, 0, 0, 0];
+                $( ".disable_area" ).hide();
+                $( "#box1-img-selected" ).hide();
+                $( "#box2-img-selected" ).hide();
+                $( "#box3-img-selected" ).hide();
+                $( "#box4-img-selected" ).hide();
+                $( "#box5-img-selected" ).hide();
+                $( "#box6-img-selected" ).hide();
+
+                $(document).ready(function(){
+                    $( window ).resize(function() {
                         setHexazone();
-                        randomBox();
+                        setDisableArea();
                     });
 
-                    function loadPhones(phone_liste) {
-                        console.log("reach");
-                    }
-
-                    function setHexazone () {
-                        var points= {
-                            "box-top" : [0.471, 0.0547],
-                            "box-top-right" : [0.777, 0.251],
-                            "box-top-left" : [0.162, 0.251],
-                            "box-bottom" : [0.471, 0.834],
-                            "box-bottom-right" : [0.777, 0.642],
-                            "box-bottom-left" : [0.162, 0.642]
-                        };
-
-                        var parent =  $( "#hexazone" ).parent();
-                        var viewportWidth = parseInt(parent.width(), 10);
-                        var viewportHeight = parseInt(parent.height(), 10);
-
-                        var width = 543;
-                        var height = 494;
-
-                        if (width > viewportWidth || height > viewportHeight ) {
-                            var width = viewportWidth;
-                            var height = viewportHeight;
-
-                            if (width < height)
-                                height = Math.round(width*0.91);
-                            else
-                                width = Math.round(height*1.1);
+                    $( ".box" ).click(function() {
+                        var num = $(this).attr('id')[3];
+                        search[num-1] = (search[num-1]==0) ? 1 : 0;
+                        if (search[num-1]==0) {
+                            $( "#"+$(this).attr('id')+"-img-selected" ).hide();
+                            $( "#"+$(this).attr('id')+"-img" ).show();
                         }
-
-                        $( "#hexazone" ).css("width", width);
-                        $( "#hexazone" ).css("height", height);
-
-                        for (var key in points) {
-                            var x = Math.round(points[key][0] * width);
-                            var y = Math.round(points[key][1] * height);
-
-                            $( "."+key ).css("top", y);
-                            $( "."+key ).css("left", x);
-
+                        else {
+                            $( "#"+$(this).attr('id')+"-img-selected" ).show();
+                            $( "#"+$(this).attr('id')+"-img" ).hide();
                         }
+                        highlightBox("#"+$(this).attr('id'));
+                    });
 
+                    $( ".box-center" ).click(function(e) {
+                        e.preventDefault();
+                        console.log(search);
+                        var critere =JSON.stringify(search);
+
+                        $.ajax({
+                            url: 'phone_selector.php',
+                            type: 'GET',
+                            data: {
+                                design: search[0],
+                                puissance: search[1],
+                                camera: search[2],
+                                connectivite: search[3],
+                                solidite: search[4],
+                                batterie: search[5]
+                            },
+                            dataType: 'text',
+                            success: function(data, statut) {
+                                console.log("reached");
+                                console.log(data);
+                            },
+                            error: function(resultat, statut, erreur) {
+                                console.log(erreur);
+                            }
+                        });
+                    });
+                    $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                        //alert(".brand-"+currentSlide);
+                        $(".brand-"+currentSlide).attr("class", "brand brand-"+currentSlide+" brand-mini");
+                        $(".brand-"+nextSlide).attr("class", "brand-"+nextSlide+" brand");
+                      // left
+                    });
+                    $(".brand_slider").slick({
+                        centerMode: true,
+                        autoplay: true,
+                        autoplaySpeed: 1500,
+                        arrows: false
+                        /*
+                        dots: false,
+                        infinite: true,
+                        centerMode: true,
+                        arrows: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        variableWidth: true,
+                        autoplay: true,
+                        autoplaySpeed: 1500,
+                        vertical: false
+                        */
+                    });
+
+                    setHexazone();
+                    setDisableArea();
+                    randomBox();
+                });
+
+                function loadPhones(phone_liste) {
+                    console.log("reach");
+                }
+
+                function setDisableArea() {
+                    var height = $( "body" ).css("height");
+                    $( ".disable_area" ).css("height", height);
+                }
+
+                function setHexazone () {
+                    var points= {
+                        "box-top" : [0.471, 0.0547],
+                        "box-top-right" : [0.777, 0.251],
+                        "box-top-left" : [0.162, 0.251],
+                        "box-bottom" : [0.471, 0.834],
+                        "box-bottom-right" : [0.777, 0.642],
+                        "box-bottom-left" : [0.162, 0.642],
+                        "box-center" : [0.471, 0.425]
+                    };
+
+                    var parent =  $( "#hexazone" ).parent();
+                    var viewportWidth = parseInt(parent.width(), 10);
+                    var viewportHeight = parseInt(parent.height(), 10);
+
+                    var width = 543;
+                    var height = 494;
+
+                    if (width > viewportWidth || height > viewportHeight ) {
+                        var width = viewportWidth;
+                        var height = viewportHeight;
+
+                        if (width < height)
+                            height = Math.round(width*0.91);
+                        else
+                            width = Math.round(height*1.1);
+                    }
+
+                    $( "#hexazone" ).css("width", width);
+                    $( "#hexazone" ).css("height", height);
+
+                    for (var key in points) {
+                        var x = Math.round(points[key][0] * width);
+                        var y = Math.round(points[key][1] * height);
+
+                        $( "."+key ).css("top", y);
+                        $( "."+key ).css("left", x);
 
                     }
 
-                    function randomBox(currentBox=null) {
-                        var boxNum = "#box"+getRandomInt(1, 7);
-                        var box_class = $(boxNum).attr("class");
-                        var current_box_class = $(currentBox).attr("class");
 
-                        $(boxNum).attr("class", box_class+" box_highlight");
-                        if (currentBox != null)
-                            $(currentBox).attr("class", current_box_class);
-                        var currentBox = boxNum;
+                }
 
-                        window.setTimeout(function() {
-                            $(currentBox).attr("class", box_class);
-                        }, 1500);
-                        window.setTimeout(function() {
-                            randomBox(currentBox);
-                        }, 3000);
+                function randomBox(currentBox=null) {
+                    var num = getRandomInt(1, 7)
+                    if (search[num-1] != 0) {
+                        return ;
                     }
-                    function getRandomInt(min, max) {
-                      min = Math.ceil(min);
-                      max = Math.floor(max);
-                      return Math.floor(Math.random() * (max - min)) + min;
-                    }
-                </script>
+                    var boxNum = "#box"+num;
+
+                    highlight[boxNum[4] - 1] = 0;
+                    highlightBox(boxNum);
+
+                    var currentBox = boxNum;
+
+                    window.setTimeout(function() {
+                        highlightBox(currentBox);
+                    }, 1500);
+                    window.setTimeout(function() {
+                        randomBox(currentBox);
+                    }, 3000);
+                }
+                function highlightBox(boxNum) {
+                    var box_class = $(boxNum).attr("class");
+
+                    box_class = (highlight[boxNum[4]-1] != 0) ? box_class.replace("box_highlight", "") : box_class+" box_highlight";
+                    highlight[boxNum[4]-1] = (highlight[boxNum[4]-1] != 0) ? 0 : 1;
+
+                    $(boxNum).attr("class", box_class);
+                }
+                function getRandomInt(min, max) {
+                  min = Math.ceil(min);
+                  max = Math.floor(max);
+                  return Math.floor(Math.random() * (max - min)) + min;
+                }
+            </script>
         </body>
 </html>

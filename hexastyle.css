@@ -5,10 +5,27 @@
     max-height: 99%;
     position: relative;
     margin:auto;
-    
-}
 
-.box {
+}
+.critere {
+    position: absolute;
+    width: 60px;
+    bottom: -20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+
+}
+.liste_selection {
+    position: absolute;
+    width: 100px;
+    left: -20px;
+    top: 66px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+}
+.box, .box-center {
   position: absolute;
   display: flex;
   width: 60px;
@@ -21,7 +38,7 @@
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.box img {
+.box img, .box-center img{
     margin: auto;
     max-width: 80%;
     max-height: 80%;

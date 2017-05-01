@@ -57,8 +57,23 @@ html, body {
 header {
     background: white;
 }
+h2 {
+    font-size: 20px;
+    line-height: 24px;
+}
 * {
   box-sizing: border-box;
+}
+
+.disable_area {
+    position: absolute;
+    top: 0px;
+    width: 99vw;
+    height: 100vh;
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 50px;
+    z-index: 1000000000000  ;
 }
 
 .slider {
@@ -143,6 +158,9 @@ header {
     margin: 20px auto;
     text-align: center;
     margin-top: 20px;
+}
+.nomargin {
+    margin: 0px;
 }
 .top_block {
     padding: 20px;
@@ -268,16 +286,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
     font-size: 18px;
     line-height: 22px;
 }
-
+.img_block {
+    padding: 0px;
+}
 .stats_content {
     vertical-align: top;
-
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 14px !important;
+    line-height: 18px !important;
 }
+
+
 .stats_img {
-    max-height: 175px;
-    max-width: 25vw;
+    position: relative;
+    margin: auto 0px;
+    max-height: 100%;
+    max-width: 100% !important;
 
 }
 .desc_img {
@@ -392,10 +415,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 .fact_section {
     top: -370px;
 }
-#stats {
-    top: -125px;
 
-}
+
 
 @media all and (max-width: 480px) {
 
