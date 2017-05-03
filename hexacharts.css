@@ -1,8 +1,8 @@
-.hexachart {
+.hexachart, .hexachart * {
     position: relative;
     margin: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 99% !important;
+    max-height: 99% !important;
     width: 200px;
     height: 200px;
 }

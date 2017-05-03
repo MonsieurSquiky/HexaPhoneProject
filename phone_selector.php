@@ -49,17 +49,18 @@ while ($donnees = $phone_data->fetch()) {
     }
 
     $score = $score / $nb_critere;
-    $data = "{
-        modele: ". $donnees['modele'] .",
-        design: ". $donnees['design'] .",
-        batterie: ". $donnees['batterie'] .",
-        camera: ". $donnees['camera'] .",
-        puissance: ". $donnees['puissance'] .",
-        reseau: ". $donnees['reseau'] .",
-        solidite: ". $donnees['solidite'] .",
-        prix: ". $donnees['prix'] .",
-        note: ". $donnees['note'] ."
-    }";
+    $data = '{
+        "id": '. $donnees['id'] .',
+        "modele": "'. $donnees['modele'] .'",
+        "design": '. $donnees['design'] .',
+        "batterie": '. $donnees['batterie'] .',
+        "camera": '. $donnees['camera'] .',
+        "puissance": '. $donnees['puissance'] .',
+        "reseau": '. $donnees['reseau'] .',
+        "solidite": '. $donnees['solidite'] .',
+        "prix": '. $donnees['prix'] .',
+        "note": '. $donnees['note'] .'
+    }';
 
     if ($score > $top3[2]) {
         if ($score > $top3[1]) {
@@ -88,5 +89,5 @@ while ($donnees = $phone_data->fetch()) {
 
 }
 
-echo serialize($selection);
+echo json_encode($selection);
 ?>

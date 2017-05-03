@@ -162,6 +162,9 @@ h2 {
 .nomargin {
     margin: 0px;
 }
+.autoblock {
+    margin: auto;
+}
 .top_block {
     padding: 20px;
 }
@@ -286,9 +289,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
     font-size: 18px;
     line-height: 22px;
 }
-.img_block {
-    padding: 0px;
-}
+
 .stats_content {
     vertical-align: top;
     font-size: 14px !important;
@@ -296,13 +297,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 }
 
 
-.stats_img {
-    position: relative;
-    margin: auto 0px;
-    max-height: 100%;
-    max-width: 100% !important;
 
-}
 .desc_img {
     max-width: 200px;
 }
@@ -374,7 +369,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
     max-width: 300px;
     font-size: 30px;
     margin-left: 10px;
-    margin-top: 0px;
+    margin-top: 10px !important;
     padding: 10px;
     text-transform: none;
     margin: auto;
