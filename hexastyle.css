@@ -83,4 +83,14 @@
     .critere {
         width: 60px;
     }
+    .hexa_block {
+        left: -15px;
+    }
+}
+
+@media all and (max-width: 480px) {
+
+    .hexa_block {
+        left: -8px;
+    }
 }

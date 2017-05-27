@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" href="finderstyle.css" />
+            <link rel="stylesheet" href="hexastyle.css" />
+            <link rel="stylesheet" href="phoneListstyle.css" />
+            <link rel="stylesheet" href="hexacharts.css" />
+            <title> Choisis un smartphone </title>
+        </head>
+        <body>
+            <header>
+                <nav class="navbar navbar-default top_menu">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand navbar_logo" href="/hexaphoneProject/index.html">
+                              <img src="pictures/HPlogo.png" class="main_logo" />
+                          </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                          <ul class="nav navbar-nav">
+                            <li class="active"><a href="/hexaphoneProject/index.html">Accueil</a></li>
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                          </ul>
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                </nav>
+            </header>
+
+            <section class="main_section top_section light_blue">
+                <div class="top_hexa alone_block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="hexa_module" class="hexa_block">
+                            <div id="hexazone" class="hexa_block  ">
+                                <!--<img src="hexa_flat.png" class="logo_banner" />-->
+                                <div id="box1" class="box box-top">
+                                    <img id="box1-img" alt="Qualité de l'écran"  src="pictures/logo_ecran.png" />
+                                    <img id="box1-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_ecran_picked.png" />
+                                    <span class="critere"> Design </span>
+                                </div>
+                                <div id="box2" class="box box-top-right">
+                                    <img id="box2-img" alt="Puissance du smartphone"  src="pictures/logo_performances.png" />
+                                    <img id="box2-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_performances_picked.png" />
+                                    <span class="critere"> Puissance </span>
+                                </div>
+                                <div id="box3" class="box box-bottom-right">
+                                    <img id="box3-img" alt="Qualité de la caméra"  src="pictures/logo_camera.png" />
+                                    <img id="box3-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_camera_picked.png" />
+                                    <span class="critere"> Caméra </span>
+                                </div>
+                                <div id="box4" class="box box-bottom">
+                                    <img id="box4-img" alt="Connectivité du smartphone"  src="pictures/logo_connectivite.png" />
+                                    <img id="box4-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_connectivite_picked.png" />
+                                    <span class="critere"> Réseau </span>
+                                </div>
+                                <div id="box5" class="box box-bottom-left">
+                                    <img id="box5-img" alt="Résistance du smartphone"  src="pictures/logo_solidite.png" />
+                                    <img id="box5-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_solidite_picked.png" />
+                                    <span class="critere"> Solidité </span>
+                                </div>
+                                <div id="box6" class="box box-top-left">
+                                    <img id="box6-img" alt="Autonomie du smartphone"  src="pictures/logo_batterie.png" />
+                                    <img id="box6-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_batterie_picked.png" />
+                                    <span class="critere"> Batterie </span>
+                                </div>
+
+                                <div class="box-center phoneFinder">
+                                    <a  class="js-scrollTo" style="display:flex" href="#filter_section">
+                                        <img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
+                                    </a>
+
+                                    <span class="liste_selection"> Cliquez, Trouvez </span>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="filter_section" class="main_section">
+                <div class="wrapper">
+
+                    <div class="row">
+                        <p>
+                          <label for="amount">Budget :</label>
+                        </p>
+                        <div id="slider-price" ></div>
+                        <input type="text" id="price" class="inputs" readonly style="border:0; font-weight:bold;">
+                    </div>
+                    <div class="row">
+                        <p> Capacité de stockage : </p>
+                        <div id="slider-memory" ></div>
+                        <input type="text" id="memory" class="inputs" readonly style="border:0; font-weight:bold;">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p> Ecran : </p>
+                            <div id="slider-screen"  class="slider_row"></div>
+                            <input type="text" id="screen" class="inputs" readonly style="border:0; font-weight:bold;">
+                            <p> Résolution : </p>
+                            <div id="slider-resolution" class="slider_row" ></div>
+                            <input type="text" id="resolution" class="inputs" readonly style="border:0; font-weight:bold;">
+
+                        </div>
+                        <div class="col-xs-6 left-align">
+                            Connectivité :
+
+                            <div id="b20" class="checkbox">
+                                <label><input type="checkbox" value="" checked="checked">4G SFR/Orange</label>
+                            </div>
+
+                            <div id="fingerprint" class="checkbox">
+                                <label><input type="checkbox" value="">Capteur d'empreinte</label>
+                            </div>
+
+                            <div id="dualsim" class="checkbox">
+                                <label><input type="checkbox" value="">Double-Sim</label>
+                            </div>
+                            <div id="sdcard" class="checkbox">
+                                <label><input type="checkbox" value="">Carte SD</label>
+                            </div>
+                            <div id="jack" class="checkbox">
+                                <label><input type="checkbox" value="">Prise Audio Jack</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            Matériaux :
+                            <div id="waterproof" class="checkbox">
+                                <label><input type="checkbox" value="">Waterproof</label>
+                            </div>
+                            <div id="rugged" class="checkbox">
+                                <label><input type="checkbox" value="">Ultra résistant</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#result_section" class="js-scrollTo">
+                            <span id="" class="button_perso main_button phoneFinder"> Valider les critères secondaires </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="result_section" class="main_section dark_grey">
+                <div class="wrapper_centered">
+                    <div class="phone_stat">
+                        <div class="phone_title">
+                            <h2 id="modele_phone1"> Xiaomi Redmi Note 4</h2>
+                        </div>
+                        <div class="row flex-row">
+                            <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-2 col-xs-4">
+                                <img id="image_phone1" class="stats_img" src="pictures/flat_phone.png" />
+                            </div>
+                            <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 col-xs-8">
+                                <div class="stats_content autoblock">
+                                    <p id="taille_phone1" class=""> - 5,5 pouces </p>
+                                    <p id="stockage_phone1" class=""> - 32Go / 64Go/ 128Go </p>
+                                    <p id="sdcard_phone1" class=""> - Dual-Sim / Carte SD </p>
+                                    <span id="prix_phone1" class="button main_button price"> 199€ </span>
+                                </div>
+                            </div>
+                            <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 hidden-xs">
+                                <div id="container1" class="hexachart"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phone_stat">
+                        <div class="phone_title">
+                            <h2 id="modele_phone2"> Xiaomi Redmi Note 4</h2>
+                        </div>
+                        <div class="row flex-row">
+                            <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-2 col-xs-4">
+                                <img id="image_phone2" class="stats_img" src="pictures/flat_phone.png" />
+                            </div>
+                            <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 col-xs-8">
+                                <div class="stats_content autoblock">
+                                    <p id="taille_phone2" class=""> - 5,5 pouces </p>
+                                    <p id="stockage_phone2" class=""> - 32Go / 64Go/ 128Go </p>
+                                    <p id="sdcard_phone2" class=""> - Dual-Sim / Carte SD </p>
+                                    <span id="prix_phone2" class="button main_button price"> 199€ </span>
+                                </div>
+                            </div>
+                            <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 hidden-xs">
+                                <div id="container2" class="hexachart"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phone_stat">
+                        <div class="phone_title">
+                            <h2 id="modele_phone3"> Xiaomi Redmi Note 4</h2>
+                        </div>
+                        <div class="row flex-row">
+                            <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-2 col-xs-4">
+                                <img id="image_phone3" class="stats_img" src="pictures/flat_phone.png" />
+                            </div>
+                            <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 col-xs-8">
+                                <div class="stats_content autoblock">
+                                    <p id="taille_phone3" class=""> - 5,5 pouces </p>
+                                    <p id="stockage_phone3" class=""> - 32Go / 64Go/ 128Go </p>
+                                    <p id="sdcard_phone3" class=""> - Dual-Sim / Carte SD </p>
+                                    <span id="prix_phone3" class="button main_button price"> 199€ </span>
+                                </div>
+                            </div>
+                            <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 hidden-xs">
+                                <div id="container3" class="hexachart"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/highcharts-more.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="hexacharts.js"> </script>
+            <script src="hexascript2.js"></script>
+            <script type="text/javascript">
+                $( function() {
+                    var memory_code = [16, 32, 64, 128];
+                    var screen_code = ["Moyenne", "Grand", "Très Grand"];
+                    var resolution_code = ["HD", "Full HD", "2K", "4K"];
+                  $( "#slider-price" ).slider({
+                    range: "min",
+                    min: 90,
+                    max: 450,
+                    value: 450,
+                    slide: function( event, ui ) {
+                      $( "#price" ).val( "Prix max : " + ui.value + " €"  );
+                    }
+                  });
+                  $( "#slider-memory" ).slider({
+                      range: "max",
+                      min: 0,
+                      max: 3,
+                      value: 0,
+                      slide: function( event, ui ) {
+                        $( "#memory" ).val( memory_code[ui.value] + " Go minimum"  );
+                      }
+                  });
+                  $( "#slider-resolution" ).slider({
+                      range: "max",
+                      min: 0,
+                      max: 3,
+                      value: 0,
+                      slide: function( event, ui ) {
+                        $( "#resolution" ).val( "Au moins "+resolution_code[ui.value]  );
+                      }
+                  });
+                  $( "#slider-screen" ).slider({
+                      range: true,
+                      min: 4.5,
+                      max: 7,
+                      values: [4.5, 7],
+                      step: 0.1,
+                      slide: function( event, ui ) {
+                        $( "#screen" ).val( "Entre " + ui.values[0] + "\" et " + ui.values[1] + "\"");
+                      }
+                  });
+                    $( "#price" ).val( "Prix max : " + $( "#slider-price" ).slider( "value") +
+                    "€" );
+                    $( "#memory" ).val( " 16 Go minimun" );
+                    $( "#screen" ).val( "Toutes les tailles" );
+                    $( "#resolution" ).val( "Au moins HD" );
+                } );
+
+                $('.js-scrollTo').on('click', function(e) { // Au clic sur un Ã©lÃ©ment
+                    e.preventDefault();
+                    var page = $(this).attr('href'); // Page cible
+                    var speed = 750; // DurÃ©e de l'animation (en ms)
+                    var topScreen = $(page).offset().top;
+
+                    if ($( "#flag" ).css("position") == "fixed")
+                        topScreen -= parseInt($( "#flag" ).css("height"), 10);
+                    $('html, body').animate( { scrollTop: topScreen }, speed ); // Go
+
+                });
+                $(document).ready(function(){
+                    $( "#result_section").hide();
+
+                });
+            </script>
+        </body>
+    </html>

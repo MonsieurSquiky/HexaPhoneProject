@@ -56,6 +56,7 @@ html, body {
 }
 header {
     background: white;
+    z-index: 99999999;
 }
 h2 {
     font-size: 20px;
@@ -308,6 +309,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
     content: url("puce_hexagon.png");
 }
 
+.navbar_logo {
+    padding:8px;
+    padding-top: 8px;
+}
+.main_logo {
+
+    margin: auto;
+    max-width: 200px;
+    height: 35px !important;
+}
 .logo_banner {
     max-width: 100%;
     max-height: 400px;
@@ -318,7 +329,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
     content: url("pictures/ico_hexa.png");
 }
 
-.button {
+.button_perso {
     border: 0px none;
     border-radius: 2px;
     box-shadow: none;
@@ -411,7 +422,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
     top: -370px;
 }
 
-
+.row {
+    max-width: 100vw !important;
+}
 
 @media all and (max-width: 480px) {
 

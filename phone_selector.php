@@ -15,12 +15,23 @@ $connectivite = $_GET['connectivite'];
 $solidite = $_GET['solidite'];
 $batterie = $_GET['batterie'];
 
-$phone_data = $bdd->query('SELECT * FROM smartphone');
+$phone_data = $bdd->query('SELECT * FROM smartphonenotes');
 
 $top3 = [0, 0, 0];
 $selection = ["false", "false", "false"];
 
 while ($donnees = $phone_data->fetch()) {
+    $prix = [];
+    $stockage = [];
+    $phone_prix = $bdd->query('SELECT * FROM smartphonestocks WHERE idPhone='.$donnees["idPhone"]);
+    $phone_specs_base = $bdd->query('SELECT * FROM smartphonespecs WHERE idPhone='.$donnees["idPhone"]);
+    $phone_specs= $phone_specs_base->fetch();
+
+    while ($donneesstocks = $phone_prix->fetch()) {
+        array_push($prix, $donneesstocks['prix']);
+        array_push($stockage, $donneesstocks['stockage']);
+    }
+
     $score = 0;
     $nb_critere = 0;
     if ($design == 1) {
@@ -50,16 +61,18 @@ while ($donnees = $phone_data->fetch()) {
 
     $score = $score / $nb_critere;
     $data = '{
-        "id": '. $donnees['id'] .',
-        "modele": "'. $donnees['modele'] .'",
+        "id": '. $donnees['idPhone'] .',
+        "modele": "'. $donnees['phoneName'] .'",
         "design": '. $donnees['design'] .',
         "batterie": '. $donnees['batterie'] .',
         "camera": '. $donnees['camera'] .',
         "puissance": '. $donnees['puissance'] .',
         "reseau": '. $donnees['reseau'] .',
         "solidite": '. $donnees['solidite'] .',
-        "prix": '. $donnees['prix'] .',
-        "note": '. $donnees['note'] .'
+        "prix": '. json_encode($prix) .',
+        "stockage": '. json_encode($stockage) .',
+        "taille": '. $phone_specs["taille"] .',
+        "note": '. $donnees['ki'] .'
     }';
 
     if ($score > $top3[2]) {

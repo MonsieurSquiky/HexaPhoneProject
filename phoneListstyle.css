@@ -45,6 +45,24 @@
     max-width: 90% !important;
 }
 
+.price {
+    display: block;
+    max-width: 300px;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 10px !important;
+    padding: 10px;
+    text-transform: none;
+    text-align: center;
+    margin: auto;
+}
+
+.stats_content {
+    vertical-align: top;
+    font-size: 14px !important;
+    line-height: 18px !important;
+}
+
 #hidden-content {
     max-width: 95vw;
 }

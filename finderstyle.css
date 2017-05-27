@@ -1,0 +1,256 @@
+/**
+* Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+* http://cssreset.com
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of reset */
+
+html, body {
+    width: 100%;
+    font-family: Roboto, Arial, sans-serif;
+    font-family: Whitney SSm A,Whitney SSm B,Helvetica,Arial;
+}
+header {
+    width: 100vw;
+    position: absolute;
+    background: white;
+    z-index: 99999999;
+}
+* {
+  box-sizing: border-box;
+}
+
+.main_section {
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+}
+
+.autoblock {
+    margin: auto;
+}
+
+
+
+#filter_section {
+    background-color: white;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+}
+.inputs {
+    max-width: 95%;
+    font-size: 14px;
+    color: #1058aa;
+    text-align: center;
+}
+.ui-slider {
+    max-width: 80vw;
+    margin: auto;
+}
+.slider_row {
+    max-width: 80%;
+}
+.wrapper, .wrapper_centered {
+    margin: auto;
+}
+
+.top_menu {
+    margin:0px;
+}
+
+.left-align {
+    text-align: left;
+
+}
+.checkbox {
+    line-height: 18px;
+    font-size: 14px;
+    margin-top: 2px;
+}
+.inline_block {
+    display: inline-block;
+    margin: auto;
+}
+.centered_block {
+    text-align: center;
+}
+#hexa_module {
+    width: 99vw;
+    height: 99vh;
+    display: flex;
+}
+
+.light_blue {
+    color: white;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1b7dd9+2,004da0+100,1058aa+100,1058aa+100,1058aa+100,1058aa+100,1058aa+100 */
+    background: #1b7dd9; /* Old browsers */
+    background: -moz-linear-gradient(left,  #1b7dd9 2%, #004da0 100%, #1058aa 100%, #1058aa 100%, #1058aa 100%, #1058aa 100%, #1058aa 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #1b7dd9 2%,#004da0 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #1b7dd9 2%,#004da0 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%,#1058aa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b7dd9', endColorstr='#1058aa',GradientType=1 ); /* IE6-9 */
+
+}
+
+
+.dark_blue {
+    color: white;
+    background: #1e3c72; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #1e3c72 , #2a5298); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #1e3c72 , #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.dark_grey {
+    color: white;
+    background-color: #2d384a;
+}
+.dark {
+    color: white;
+    background-color: #0d2233;
+}
+.dark_orange {
+    color: white;
+    background: #df8253; /* Old browsers */
+    background: -moz-linear-gradient(left,  #df8253 2%, #c54b05 100%, #cd601d 100%, #cd601d 100%, #cd601d 100%, #cd601d 100%, #cd601d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #df8253 2%,#c54b05 100%,#cd601d 100%,#cd601d 100%,#cd601d 100%,#cd601d 100%,#cd601d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #df8253 2%,#c54b05 100%,#cd601d 100%,#cd601d 100%,#cd601d 100%,#cd601d 100%,#cd601d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df8253', endColorstr='#cd601d',GradientType=1 ); /* IE6-9 */
+}
+.dark_red {
+    color: white;
+    background: #a7213a; /* Old browsers */
+    background: -moz-linear-gradient(left,  #a7213a 0%, #820220 44%, #640017 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #a7213a 0%,#820220 44%,#640017 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #a7213a 0%,#820220 44%,#640017 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7213a', endColorstr='#640017',GradientType=1 ); /* IE6-9 */
+}
+
+.turquoise {
+    color: white;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#90e4b9+0,38c8b0+22,006289+100 */
+    background: #90e4b9; /* Old browsers */
+    background: -moz-linear-gradient(left,  #90e4b9 0%, #38c8b0 22%, #006289 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #90e4b9 0%,#38c8b0 22%,#006289 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #90e4b9 0%,#38c8b0 22%,#006289 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90e4b9', endColorstr='#006289',GradientType=1 ); /* IE6-9 */
+
+}
+.frost_blue {
+    color: white;
+    background: #000428; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #000428 , #004e92); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000428 , #004e92); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.blue_turquoise {
+color:white;
+background: #0076a4; /* Old browsers */
+background: -moz-linear-gradient(left,  #0076a4 0%, #003856 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #0076a4 0%,#003856 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #0076a4 0%,#003856 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', endColorstr='#003856',GradientType=1 ); /* IE6-9 */
+
+}
+
+.button_perso {
+    border: 0px none;
+    border-radius: 2px;
+    box-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    outline: 0px none;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.main_button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-width: 36px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease 0s, box-shadow 0.2s ease 0s;
+    font: 500 14px/20px Roboto,sans-serif;
+    padding: 8px;
+    color: white;
+    background-color: #b52943;
+}
+
+.stats_button {
+    display: block;
+    margin: 10px auto;
+    min-width: 36px;
+    transition: background-color 0.2s ease 0s, box-shadow 0.2s ease 0s;
+    font: 500 14px/20px Roboto,sans-serif;
+    padding: 8px;
+    color:#d25455;
+}
+
+.blue_button {
+    background-color: #0066ff;
+}
+
+.white_button {
+    color: #295197;
+    background-color: #fff;
+}
+.main_logo {
+
+    margin: auto;
+    max-width: 200px;
+    height: 35px !important;
+}
+
+.navbar_logo {
+    padding:8px !important;
+    padding-top: 8px;
+}
+
+.row {
+    max-width: 100vw !important;
+}
