@@ -41,12 +41,12 @@
                         </div>
                       </div>
                 </nav>
-            </header>
 
+            </header>
             <section class="main_section top_section light_blue">
-                <div class="top_hexa alone_block col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div id="hexa_module" class="hexa_block">
-                            <div id="hexazone" class="hexa_block  ">
+                <div class="top_hexa fullblock col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="hexa_module" class="">
+                            <div id="hexazone" class="autoblock  ">
                                 <!--<img src="hexa_flat.png" class="logo_banner" />-->
                                 <div id="box1" class="box box-top">
                                     <img id="box1-img" alt="Qualité de l'écran"  src="pictures/logo_ecran.png" />
@@ -156,6 +156,7 @@
             </section>
             <section id="result_section" class="main_section dark_grey">
                 <div class="wrapper_centered">
+                    <!--
                     <div class="phone_stat">
                         <div class="phone_title">
                             <h2 id="modele_phone1"> Xiaomi Redmi Note 4</h2>
@@ -164,7 +165,7 @@
                             <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-2 col-xs-4">
                                 <img id="image_phone1" class="stats_img" src="pictures/flat_phone.png" />
                             </div>
-                            <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 col-xs-8">
+                            <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 hidden-xs">
                                 <div class="stats_content autoblock">
                                     <p id="taille_phone1" class=""> - 5,5 pouces </p>
                                     <p id="stockage_phone1" class=""> - 32Go / 64Go/ 128Go </p>
@@ -172,7 +173,7 @@
                                     <span id="prix_phone1" class="button main_button price"> 199€ </span>
                                 </div>
                             </div>
-                            <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 hidden-xs">
+                            <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 col-xs-8">
                                 <div id="container1" class="hexachart"> </div>
                             </div>
                         </div>
@@ -219,10 +220,51 @@
                             </div>
                         </div>
                     </div>
+                -->
+                    <div id="node_template" class="phone_stat">
+                        <div class="circle_rank">
+                            <h2 class="circle_rank-number"> 1 <h2>
+                        </div>
+                        <div class="phone_title">
+                            <h2> Nom du smartphone</h2>
+                        </div>
+                        <div class="row flex-row">
+                            <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-2 col-xs-4">
+                                <img class="stats_img" src="pictures/phonePics/phonepic753.jpg" />
+                            </div>
+                            <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 hidden-xs">
+                                <div class="stats_content autoblock">
+                                    <p class="phone_taille"> - Taille du smartphone </p>
+                                    <p class="phone_stockage"> - Versions disponibles </p>
+                                    <p class="phone_option"> - Autres options </p>
+                                    <span class="button_perso main_button price"> Prix </span>
+                                </div>
+                            </div>
+                            <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 col-xs-7">
+                                <div id="container" class="hexachart"> </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" hidden-sm hidden-md hidden-lg col-xs-12">
+                                <div class="stats_content autoblock">
+                                    <!--
+                                    <p class=""> - Taille du smartphone </p>
+                                    <p class=""> - Versions disponibles </p>
+                                    <p class=""> - Autres options </p>
+                                    -->
+                                    <span class="button_perso main_button price button-xs"> Prix </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moreNodes">
+                        <span class="moreNodes_button autoblock button_perso main_button white_button"> Voir plus </span>
+                    </div>
                 </div>
             </section>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script src="jquery.ui.touch-punch.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
             <script src="https://code.highcharts.com/highcharts.js"></script>
             <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -230,6 +272,40 @@
             <script src="hexacharts.js"> </script>
             <script src="hexascript2.js"></script>
             <script type="text/javascript">
+                var nodeTemplate;
+                function addPhoneNode(nb_total_node, dataNode) {
+                    //var nodeTemplate = $( "#node_template").clone(true);
+                    $("[id^=nodePhone]").remove();
+                    for (var i = 0; i < nb_total_node; i++) {
+                        var newNode = nodeTemplate.clone(true);
+                        var nodeData = JSON.parse(JSON.parse(dataNode[i])[2]);
+                        newNode.attr('id', "nodePhone"+(i+1));
+
+                        newNode.find(".circle_rank-number").html(i +1);
+                        newNode.find(".phone_title").html(nodeData.modele);
+                        newNode.find(".price").html(Math.min(...nodeData.prix)+" €");
+                        newNode.find(".stats_img").attr("src", "pictures/phonePics/phonepic"+nodeData.id+".jpg");
+
+                        newNode.find("#container").attr("id", "container"+(i+1));
+                        newNode.find(".phone_taille").html(" - "+ nodeData.taille +" pouces");
+                        newNode.find(".phone_stockage").html(" - "+ getStockageList(nodeData    .stockage));
+
+                        //chartList[i].series[0].setData([nodeData.design, nodeData.puissance, nodeData.camera, nodeData.reseau, nodeData.solidite, nodeData.batterie]);
+                        //console.log(chartList.length);
+                        //$( "#result_section").children().append(newNode);
+                        newNode.insertBefore($(".moreNodes"));
+
+                    }
+                }
+
+                function updateCharts(nbCharts, data) {
+                    for (var i = 0; i < nbCharts; i++) {
+                        var nodeData = JSON.parse(JSON.parse(data[i])[2]);
+
+                        chartList[i].series[0].setData([nodeData.design, nodeData.puissance, nodeData.camera, nodeData.reseau, nodeData.solidite, nodeData.batterie]);
+                    }
+                }
+
                 $( function() {
                     var memory_code = [16, 32, 64, 128];
                     var screen_code = ["Moyenne", "Grand", "Très Grand"];
@@ -237,7 +313,7 @@
                   $( "#slider-price" ).slider({
                     range: "min",
                     min: 90,
-                    max: 450,
+                    max: 900,
                     value: 450,
                     slide: function( event, ui ) {
                       $( "#price" ).val( "Prix max : " + ui.value + " €"  );
@@ -290,8 +366,17 @@
 
                 });
                 $(document).ready(function(){
+                    nodeTemplate = $( "#node_template").clone(true);
+                    $( "#node_template").hide();
                     $( "#result_section").hide();
 
+                    $( ".moreNodes_button" ).click(function(e) {
+                        var limit = Math.min(10, phoneData.length)
+                        addPhoneNode(limit, phoneData);
+                        createCharts(limit);
+                        updateCharts(limit, phoneData);
+                        $( this ).hide();
+                    });
                 });
             </script>
         </body>

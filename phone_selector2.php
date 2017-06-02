@@ -34,6 +34,8 @@ $memory_code = [16, 32, 64, 128];
 $phone_data = $bdd->query('SELECT * FROM smartphonenotes');
 
 $top3 = [0, 0, 0];
+$scoretab = [];
+$specstab = [];
 $selection = ["false", "false", "false"];
 
 while ($donnees = $phone_data->fetch()) {
@@ -74,8 +76,8 @@ while ($donnees = $phone_data->fetch()) {
             $nb_critere += 1.2;
         }
         if ($connectivite == 1) {
-            $score += $donnees['reseau'];
-            $nb_critere += 1;
+            $score += $donnees['reseau']*0.3;
+            $nb_critere += 0.3;
         }
         if ($solidite == 1) {
             $score += $donnees['solidite']*0.4; // coefficient de ponderation pour la solidité 0.4
@@ -87,6 +89,7 @@ while ($donnees = $phone_data->fetch()) {
         }
 
         $score = $score / $nb_critere;
+
         $data = '{
             "id": '. $donnees['idPhone'] .',
             "modele": "'. $donnees['phoneName'] .'",
@@ -101,6 +104,8 @@ while ($donnees = $phone_data->fetch()) {
             "taille": '. $phone_specs["taille"] .',
             "note": '. $donnees['ki'] .'
         }';
+        array_push($scoretab, [$donnees['idPhone'], $score, $data]);
+        array_push($specstab, [$donnees['idPhone'], $data]);
 
         if ($score > $top3[2]) {
             if ($score > $top3[1]) {
@@ -129,5 +134,15 @@ while ($donnees = $phone_data->fetch()) {
     }
 }
 
-echo json_encode($selection);
+foreach ($scoretab as $key => $row) {
+    $ids[$key]  = $row[0];
+    $scoreSubtab[$key] = $row[1];
+}
+array_multisort($scoreSubtab, SORT_DESC, $ids, SORT_ASC, $scoretab);
+//print_r($scoretab);
+//echo $score;
+foreach ($scoretab as $key => $row) {
+    $scoretab[$key] = json_encode($row);
+}
+echo json_encode($scoretab);
 ?>

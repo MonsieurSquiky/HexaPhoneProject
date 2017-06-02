@@ -1,17 +1,16 @@
 .phone_stat {
 
-
     max-width: 350px;
-    min-width: 270px;
+    min-width: 280px;
     color: black;
-    margin: 20px auto;
+    margin: 20px ;
     background-color: white;
     border-radius: 10px;
     border-width: 2px;
     border-color: gray;
     border-style: solid;
     box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.2);
-    height: 220px;
+    /*height: 220px;*/
 }
 .flex-row {
     display: flex; /* contexte sur le parent */
@@ -23,11 +22,13 @@
     margin: auto;
     height: 99%;
     padding-right: 0px;
+
 }
 .phone_title {
     text-align: center;
     padding-top: 10px;
     height: 35px;
+    z-index: 99999999999999001;
 }
 
 .img_block {
@@ -44,7 +45,33 @@
     max-height: 80% !important;
     max-width: 90% !important;
 }
+.circle_rank {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: -15px;
+    margin-left: -15px;
+    background-color: #1b7dd9;
+    color: white;
 
+    font-size: 26px;
+    opacity: 0.90;
+}
+
+.circle_rank-number {
+    margin:auto;
+    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+.button-xs {
+    width: 200px;
+    position: relative;
+    top: -10px;
+
+}
 .price {
     display: block;
     max-width: 300px;
@@ -73,5 +100,8 @@
         max-width: 600px;
         max-height: 250px;
         margin: 20px auto;
+    }
+    .row {
+        padding-right: 15px;
     }
 }

@@ -218,166 +218,64 @@ Highcharts.theme = {
 
 // Apply the theme
 //Highcharts.setOptions(Highcharts.theme);
+var chartList = [];
+function createCharts(nb) {
+    chartList = [];
+    for(var i=0; i < nb; i++) {
+        var name = 'container'+(i+1);
+        var chart = Highcharts.chart(name, {
+            chart: {
+                polar: true,
+                type: 'area'
+            },
 
+            pane: {
+                size: '70%'
+            },
 
-var chart1 = Highcharts.chart('container1', {
+            xAxis: {
+                categories: ['Design', 'Puissance', 'Caméra', 'Réseau',
+                        'Solidité', 'Batterie'],
+                tickmarkPlacement: 'on',
+                lineWidth: 0,
+                min: 0.0
+            },
 
-    chart: {
-        polar: true,
-        type: 'area'
-    },
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0.0,
+                max: 10.0
+            },
 
-    pane: {
-        size: '70%'
-    },
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}/10 </b><br/>'
+            },
 
-    xAxis: {
-        categories: ['Design', 'Puissance', 'Caméra', 'Réseau',
-                'Solidité', 'Batterie'],
-        tickmarkPlacement: 'on',
-        lineWidth: 0,
-        min: 0.0
-    },
-
-    yAxis: {
-        gridLineInterpolation: 'polygon',
-        lineWidth: 0,
-        min: 0.0,
-        max: 10.0
-    },
-
-    tooltip: {
-        shared: true,
-        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}/10 </b><br/>'
-    },
-
-    legend: {
-        enabled: false
-    },
-
-    title: {
-        text: null
-    },
-    exporting: {
-        allowHTML: false,
-        buttons: {
-            contextButton: {
+            legend: {
                 enabled: false
-            }
-        }
-    },
-    series: [{
-        name: 'Note',
-        data: [9, 8, 9, 7, 10, 9],
-        pointPlacement: 'on'
-    }]
+            },
 
-});
+            title: {
+                text: null
+            },
+            exporting: {
+                allowHTML: false,
+                buttons: {
+                    contextButton: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                name: 'Note',
+                data: [9, 8, 9, 7, 10, 9],
+                pointPlacement: 'on'
+            }]
 
-var chart2 = Highcharts.chart('container2', {
+        });
+        chartList.push(chart);
+    }
 
-    chart: {
-        polar: true,
-        type: 'area'
-    },
-
-    pane: {
-        size: '70%'
-    },
-
-    xAxis: {
-        categories: ['Design', 'Puissance', 'Caméra', 'Réseau',
-                'Solidité', 'Batterie'],
-        tickmarkPlacement: 'on',
-        lineWidth: 0,
-        min: 0
-    },
-
-    yAxis: {
-        gridLineInterpolation: 'polygon',
-        lineWidth: 0,
-        min: 0,
-        max: 10
-    },
-
-    tooltip: {
-        shared: true,
-        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}/10 </b><br/>'
-    },
-
-    legend: {
-        enabled: false
-    },
-
-    title: {
-        text: null
-    },
-    exporting: {
-        allowHTML: false,
-        buttons: {
-            contextButton: {
-                enabled: false
-            }
-        }
-    },
-    series: [{
-        name: 'Note',
-        data: [9.9, 8.3, 9.1, 7.2, 10.0, 9.4],
-        pointPlacement: 'on'
-    }]
-
-});
-
-var chart3 = Highcharts.chart('container3', {
-
-    chart: {
-        polar: true,
-        type: 'area'
-    },
-
-    pane: {
-        size: '70%'
-    },
-
-    xAxis: {
-        categories: ['Design', 'Puissance', 'Caméra', 'Réseau',
-                'Solidité', 'Batterie'],
-        tickmarkPlacement: 'on',
-        lineWidth: 0,
-        min: 0
-    },
-
-    yAxis: {
-        gridLineInterpolation: 'polygon',
-        lineWidth: 0,
-        min: 0,
-        max: 10
-    },
-
-    tooltip: {
-        shared: true,
-        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}/10 </b><br/>'
-    },
-
-    legend: {
-        enabled: false
-    },
-
-    title: {
-        text: null
-    },
-    exporting: {
-        allowHTML: false,
-        buttons: {
-            contextButton: {
-                enabled: false
-            }
-        }
-    },
-    series: [{
-        name: 'Note',
-        data: [9, 8, 9, 7, 10, 9],
-        pointPlacement: 'on'
-    }]
-
-});
+}

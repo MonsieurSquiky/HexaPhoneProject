@@ -1,5 +1,6 @@
 
 //var unserialize = require('..').unserialize;
+var phoneData;
 var searchname = {  "design": false,
             "puissance": false,
             "camera": false,
@@ -85,36 +86,17 @@ $(document).ready(function(){
             },
             dataType: 'json',
             success: function(data, statut) {
-                console.log(data);
-                var first = JSON.parse(data[0]);
-                var second = JSON.parse(data[1]);
-                var third = JSON.parse(data[2]);
+                console.log(data.length);
+                phoneData = data;
+                var limit = Math.min(3, data.length);
+                addPhoneNode(limit, data);
+                createCharts(limit);
+                updateCharts(limit, data);
+                if (data.length > 3)
+                    $( ".moreNodes_button" ).show();
+                else
+                    $( ".moreNodes_button" ).hide();
 
-                $( "#modele_phone1" ).html(first.modele);
-                console.log($( "#modele_phone1" ).html());
-                $( "#modele_phone2" ).html(second.modele);
-                $( "#modele_phone3" ).html(third.modele);
-
-                $( "#prix_phone1" ).html(Math.min(...first.prix)+" €");
-                $( "#prix_phone2" ).html(Math.min(...second.prix)+" €");
-                $( "#prix_phone3" ).html(Math.min(...third.prix)+" €");
-
-                $( "#image_phone1" ).attr("src", "pictures/phonePics/phonepic"+first.id+".jpg");
-                $( "#image_phone2" ).attr("src", "pictures/phonePics/phonepic"+second.id+".jpg");
-                $( "#image_phone3" ).attr("src", "pictures/phonePics/phonepic"+third.id+".jpg");
-
-                $( "#taille_phone1" ).html(" - "+ first.taille +" pouces");
-                $( "#taille_phone2" ).html(" - "+ second.taille +" pouces");
-                $( "#taille_phone3" ).html(" - "+ third.taille +" pouces");
-
-                $( "#stockage_phone1" ).html(" - "+ getStockageList(first.stockage));
-                $( "#stockage_phone2" ).html(" - "+ getStockageList(second.stockage));
-                $( "#stockage_phone3" ).html(" - "+ getStockageList(third.stockage));
-                console.log(getStockageList(first.stockage)[getStockageList(first.stockage).length - 1]);
-
-                chart1.series[0].setData([first.design, first.puissance, first.camera, first.reseau, first.solidite, first.batterie]);
-                chart2.series[0].setData([second.design, second.puissance, second.camera, second.reseau, second.solidite, second.batterie]);
-                chart3.series[0].setData([third.design, third.puissance, third.camera, third.reseau, third.solidite, third.batterie]);
             },
             error: function(resultat, statut, erreur) {
                 console.log(erreur);

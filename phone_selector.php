@@ -47,8 +47,8 @@ while ($donnees = $phone_data->fetch()) {
         $nb_critere += 1;
     }
     if ($connectivite == 1) {
-        $score += $donnees['reseau'];
-        $nb_critere += 1;
+        $score += $donnees['reseau']*0.3;
+        $nb_critere += 0.3;
     }
     if ($solidite == 1) {
         $score += $donnees['solidite'];
