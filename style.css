@@ -148,10 +148,11 @@ h2 {
 }
 .centered_block {
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .promote_block {
-    max-width: 90%;
+    
     padding: 0px 25px;
 }
 .text_block {

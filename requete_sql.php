@@ -97,7 +97,7 @@ while ($stocks = $phonePrix->fetch()) {
 }
 */
 
-/* Systeme notation de la batterie
+/* Systeme notation de la batterie */
 while ($specs = $phoneSpecs->fetch()) {
     $idPhone = $specs['idPhone'];
     $batterie = $specs['batterieCapacite'];
@@ -122,6 +122,8 @@ while ($specs = $phoneSpecs->fetch()) {
     $scoreProcesseur = 0;
 
     if (stripos($processeur, "MediaTek") !== false)
+        $scoreProcesseur = -0.2;
+    if (stripos($processeur, "KIRIN") !== false)
         $scoreProcesseur = -0.2;
     if (stripos($processeur, "Snapdragon") !== false)
         $scoreProcesseur = 0.4;
@@ -162,4 +164,3 @@ while ($specs = $phoneSpecs->fetch()) {
     $update->bindparam(':idPhone', $idPhone, PDO::PARAM_INT);
     $update->execute();
 }
-*/
