@@ -1,7 +1,11 @@
 <?php
 // on se connecte à notre base de données
 try {
+    //$bdd = new PDO('mysql:host=hexaphonhdv1.mysql.db;dbname=hexaphonhdv1', 'hexaphonhdv1', 'HkE4WhD2');
+
     $bdd = new PDO('mysql:host=localhost;dbname=hexaphone', 'root', 'morydalveen10');
+    //$bdd = new PDO('mysql:host=sql.free.fr;dbname=moryfodecisse', 'moryfodecisse', 'mory10');
+
 }
 
 catch (Exception $e) {
@@ -46,9 +50,14 @@ while ($donnees = $phone_data->fetch()) {
     $phone_specs= $phone_specs_base->fetch();
 
     while ($donneesstocks = $phone_prix->fetch()) {
+        if ($donneesstocks['stock'] < 0)
+            continue;
         array_push($prix, $donneesstocks['prix']);
         array_push($stockage, $donneesstocks['stockage']);
     }
+
+    if (count($prix) <= 0)
+        continue;
 
     $tailleBool = ($phone_specs["taille"] >= $sizemin AND $phone_specs["taille"] <= $sizemax);
     $b20Bool = ($b20 == 'true') ? strpos($phone_specs["bande4g"], "\"800") : true;

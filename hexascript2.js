@@ -1,6 +1,8 @@
 
 //var unserialize = require('..').unserialize;
+var nodeTemplate;
 var phoneData;
+var likesJSON;
 var searchname = {  "design": false,
             "puissance": false,
             "camera": false,
@@ -106,7 +108,79 @@ $(document).ready(function(){
 
     setHexazone();
     randomBox();
+    nodeTemplate = $( "#node_template").clone(true);
+    $( "#node_template" ).hide();
+    $.getJSON("likes.json", function(json) {
+        likesJSON = json;
+        console.log(json); // this will show the info it in firebug console
+    });
 });
+
+
+function addPhoneNode(nb_total_node, dataNode) {
+    //var nodeTemplate = $( "#node_template").clone(true);
+    $("[id^=nodePhone]").remove();
+
+    for (var i = 0; i < nb_total_node; i++) {
+        var newNode = nodeTemplate.clone(true);
+        var nodeData = JSON.parse(JSON.parse(dataNode[i])[2]);
+        newNode.attr('id', "nodePhone"+(i+1));
+
+        newNode.find(".circle_rank-number").html(i +1);
+        newNode.find(".phone_title").html(nodeData.modele);
+        newNode.find(".price").html(Math.min(...nodeData.prix)+" €");
+        newNode.find(".stats_img").attr("src", "pictures/phonePics/phonepic"+nodeData.id+".jpg");
+
+        newNode.find("#container").attr("id", "container"+(i+1));
+        newNode.find(".phone_taille").html(" - "+ nodeData.taille +" pouces");
+        newNode.find(".phone_stockage").html(" - "+ getStockageList(nodeData.stockage));
+
+        var pros = newNode.find(".pros");
+        var cons = newNode.find(".cons");
+
+        var likesData = searchPhoneinJSON(nodeData.id, likesJSON);
+
+        for (var j=0; j < likesData.pros.length; j++)
+            $( "<li><span> "+likesData.pros[j]+" </span></li>" ).appendTo( pros );
+
+        for (var j=0; j < likesData.cons.length; j++)
+            $( "<li> <span>"+likesData.cons[j]+"</span> </li>" ).appendTo( cons );
+
+        newNode.find(".inner_wrapper").hide();
+        //chartList[i].series[0].setData([nodeData.design, nodeData.puissance, nodeData.camera, nodeData.reseau, nodeData.solidite, nodeData.batterie]);
+        //console.log(chartList.length);
+        //$( "#result_section").children().append(newNode);
+        newNode.insertBefore($(".moreNodes"));
+
+    }
+    $( ".scroll-icon" ).click(function(e) {
+        $( this ).parent().find(".inner_wrapper").show(400);
+        $( this ).parent().find(".top-left-icon").show();
+        $( this ).hide();
+    });
+    $( ".top-left-icon" ).click(function(e) {
+        $( this ).parent().hide(400);
+        $( this ).hide();
+        $( this ).parent().parent().children(".scroll-icon").show();
+    });
+}
+
+function updateCharts(nbCharts, data) {
+    for (var i = 0; i < nbCharts; i++) {
+        var nodeData = JSON.parse(JSON.parse(data[i])[2]);
+
+        chartList[i].series[0].setData([nodeData.design, nodeData.puissance, nodeData.camera, nodeData.reseau, nodeData.solidite, nodeData.batterie]);
+    }
+}
+
+function searchPhoneinJSON (idPhone, json) {
+
+    for (var i=0; i<json.length; i++) {
+        if (parseInt(json[i].idPhone) == idPhone)
+            return json[i];
+    }
+    return null;
+}
 
 function loadPhones(phone_liste) {
     console.log("reach");

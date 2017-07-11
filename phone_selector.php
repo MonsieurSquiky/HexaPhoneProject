@@ -1,7 +1,10 @@
 <?php
 // on se connecte à notre base de données
 try {
+    //$bdd = new PDO('mysql:host=hexaphonhdv1.mysql.db;dbname=hexaphonhdv1', 'hexaphonhdv1', 'HkE4WhD2');
     $bdd = new PDO('mysql:host=localhost;dbname=hexaphone', 'root', 'morydalveen10');
+    //$bdd = new PDO('mysql:host=sql.free.fr;dbname=moryfodecisse', 'moryfodecisse', 'mory10');
+
 }
 
 catch (Exception $e) {
@@ -28,31 +31,36 @@ while ($donnees = $phone_data->fetch()) {
     $phone_specs= $phone_specs_base->fetch();
 
     while ($donneesstocks = $phone_prix->fetch()) {
+        if ($donneesstocks['stock'] < 0)
+            continue;
         array_push($prix, $donneesstocks['prix']);
         array_push($stockage, $donneesstocks['stockage']);
     }
 
+    if (count($prix) <= 0)
+        continue;
+
     $score = 0;
     $nb_critere = 0;
     if ($design == 1) {
-        $score += $donnees['design'];
-        $nb_critere += 1;
+        $score += $donnees['design']*0.3;
+        $nb_critere += 0.3;
     }
     if ($puissance == 1) {
         $score += $donnees['puissance'];
         $nb_critere += 1;
     }
     if ($camera == 1) {
-        $score += $donnees['camera'];
-        $nb_critere += 1;
+        $score += $donnees['camera']*1.2;
+        $nb_critere += 1.2;
     }
     if ($connectivite == 1) {
         $score += $donnees['reseau']*0.3;
         $nb_critere += 0.3;
     }
     if ($solidite == 1) {
-        $score += $donnees['solidite'];
-        $nb_critere += 1;
+        $score += $donnees['solidite']*0.4; // coefficient de ponderation pour la solidité 0.4
+        $nb_critere += 0.4;
     }
     if ($batterie == 1) {
         $score += $donnees['batterie'];

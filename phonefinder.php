@@ -15,78 +15,20 @@
         </head>
         <body>
             <header>
-                <nav class="navbar navbar-default top_menu">
-                      <div class="container-fluid">
-                        <div class="navbar-header">
-                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                          </button>
-                          <a class="navbar-brand navbar_logo" href="/hexaphoneProject/index.html">
-                              <img src="pictures/HPlogo.png" class="main_logo" />
-                          </a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                          <ul class="nav navbar-nav">
-                            <li class="active"><a href="/hexaphoneProject/index.html">Accueil</a></li>
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
-                          </ul>
-                          <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                </nav>
-
+                <?php include("header.html"); ?>
             </header>
             <section class="main_section top_section light_blue">
                 <div class="top_hexa fullblock col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="hexa_module" class="">
-                            <div id="hexazone" class="autoblock  ">
-                                <!--<img src="hexa_flat.png" class="logo_banner" />-->
-                                <div id="box1" class="box box-top">
-                                    <img id="box1-img" alt="Qualité de l'écran"  src="pictures/logo_ecran.png" />
-                                    <img id="box1-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_ecran_picked.png" />
-                                    <span class="critere"> Design </span>
-                                </div>
-                                <div id="box2" class="box box-top-right">
-                                    <img id="box2-img" alt="Puissance du smartphone"  src="pictures/logo_performances.png" />
-                                    <img id="box2-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_performances_picked.png" />
-                                    <span class="critere"> Puissance </span>
-                                </div>
-                                <div id="box3" class="box box-bottom-right">
-                                    <img id="box3-img" alt="Qualité de la caméra"  src="pictures/logo_camera.png" />
-                                    <img id="box3-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_camera_picked.png" />
-                                    <span class="critere"> Caméra </span>
-                                </div>
-                                <div id="box4" class="box box-bottom">
-                                    <img id="box4-img" alt="Connectivité du smartphone"  src="pictures/logo_connectivite.png" />
-                                    <img id="box4-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_connectivite_picked.png" />
-                                    <span class="critere"> Réseau </span>
-                                </div>
-                                <div id="box5" class="box box-bottom-left">
-                                    <img id="box5-img" alt="Résistance du smartphone"  src="pictures/logo_solidite.png" />
-                                    <img id="box5-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_solidite_picked.png" />
-                                    <span class="critere"> Solidité </span>
-                                </div>
-                                <div id="box6" class="box box-top-left">
-                                    <img id="box6-img" alt="Autonomie du smartphone"  src="pictures/logo_batterie.png" />
-                                    <img id="box6-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_batterie_picked.png" />
-                                    <span class="critere"> Batterie </span>
-                                </div>
+                        <?php include("hexazone.html") ?>
+                        <div class="box-center phoneFinder">
+                            <a style="display:flex" href="#filter_section" class="js-scrollTo">
+                                <img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
+                            </a>
 
-                                <div class="box-center phoneFinder">
-                                    <a  class="js-scrollTo" style="display:flex" href="#filter_section">
-                                        <img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
-                                    </a>
-
-                                    <span class="liste_selection"> Cliquez, Trouvez </span>
-                                </div>
-                            </div>
+                            <span class="liste_selection"> Cliquez, Trouvez </span>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -166,7 +108,7 @@
                                 <h2> Nom du smartphone</h2>
                             </div>
                             <div class="row flex-row">
-                                <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-2 col-xs-4">
+                                <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-3 col-xs-4">
                                     <img class="stats_img" src="pictures/phonePics/phonepic753.jpg" />
                                 </div>
                                 <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 hidden-xs">
@@ -181,16 +123,24 @@
                                     <div id="container" class="hexachart"> </div>
                                 </div>
                             </div>
+                            <div class="scroll-icon"> <img class="scroll-icon-im" src="pictures/down_arrow.png" alt="Devoiler avantages" /> </div>
                             <div class="inner_wrapper">
+                                <div class="top-left-icon"> <img src="pictures/cross.png" alt="Fermer l'onglet" /> </div>
                                 <div class="row" style="margin: 0px;">
                                     <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
-                                        <div class="text_box pros">
+                                        <div class="text_box">
+                                            <div class="comments_title" style="color: green;"> Les Plus : </div>
+                                            <ul class="comments pros">
 
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
-                                        <div class="text_box cons">
+                                        <div class="text_box">
+                                            <div class="comments_title" style="color: red;"> Les Moins : </div>
+                                            <ul class="comments cons">
 
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -201,7 +151,7 @@
                         <span class="moreNodes_button autoblock button_perso main_button white_button"> Voir plus </span>
                     </div>
                 </div>
-            </secion>
+            </section>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="jquery.ui.touch-punch.min.js"></script>
@@ -276,7 +226,7 @@
 
                     $( "#result_section").hide();
 
-                    $( ".moreNodes_button" ).click(function(e) {
+                    $( ".moreNodes" ).click(function(e) {
                         var limit = Math.min(10, phoneData.length)
                         addPhoneNode(limit, phoneData);
                         createCharts(limit);

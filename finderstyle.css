@@ -55,6 +55,7 @@ html, body {
 }
 header {
     width: 100vw;
+    max-width: 100%;
     position: absolute;
     background: white;
     z-index: 99999999;
@@ -130,7 +131,7 @@ header {
     text-align: center;
 }
 #hexa_module {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
 }
@@ -265,5 +266,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076a4', end
 }
 
 .row {
-    max-width: 100vw !important;
+    max-width: 100% !important;
 }

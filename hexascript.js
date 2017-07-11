@@ -1,5 +1,7 @@
 
 //var unserialize = require('..').unserialize;
+var nodeTemplate;
+var phoneData;
 var searchname = {  "design": false,
             "puissance": false,
             "camera": false,
@@ -8,7 +10,7 @@ var searchname = {  "design": false,
             "batterie": false};
 
 var search = [0, 0, 0, 0, 0, 0];
-
+setHexazone();
 var highlight = [0, 0, 0, 0, 0, 0];
 // $( ".disable_area" ).hide();
 $( "#box1-img-selected" ).hide();
@@ -60,35 +62,11 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(data, statut) {
                 console.log(data);
-                var first = JSON.parse(data[0]);
-                var second = JSON.parse(data[1]);
-                var third = JSON.parse(data[2]);
-
-                $( "#modele_phone1" ).html(first.modele);
-                console.log($( "#modele_phone1" ).html());
-                $( "#modele_phone2" ).html(second.modele);
-                $( "#modele_phone3" ).html(third.modele);
-
-                $( "#prix_phone1" ).html(Math.min(...first.prix)+" €");
-                $( "#prix_phone2" ).html(Math.min(...second.prix)+" €");
-                $( "#prix_phone3" ).html(Math.min(...third.prix)+" €");
-
-                $( "#image_phone1" ).attr("src", "pictures/phonePics/phonepic"+first.id+".jpg");
-                $( "#image_phone2" ).attr("src", "pictures/phonePics/phonepic"+second.id+".jpg");
-                $( "#image_phone3" ).attr("src", "pictures/phonePics/phonepic"+third.id+".jpg");
-
-                $( "#taille_phone1" ).html(" - "+ first.taille +" pouces");
-                $( "#taille_phone2" ).html(" - "+ second.taille +" pouces");
-                $( "#taille_phone3" ).html(" - "+ third.taille +" pouces");
-
-                $( "#stockage_phone1" ).html(" - "+ getStockageList(first.stockage));
-                $( "#stockage_phone2" ).html(" - "+ getStockageList(second.stockage));
-                $( "#stockage_phone3" ).html(" - "+ getStockageList(third.stockage));
-                console.log(getStockageList(first.stockage)[getStockageList(first.stockage).length - 1]);
-
-                chart1.series[0].setData([first.design, first.puissance, first.camera, first.reseau, first.solidite, first.batterie]);
-                chart2.series[0].setData([second.design, second.puissance, second.camera, second.reseau, second.solidite, second.batterie]);
-                chart3.series[0].setData([third.design, third.puissance, third.camera, third.reseau, third.solidite, third.batterie]);
+                phoneData = data;
+                var limit = Math.min(3, data.length);
+                addPhoneNode(limit, data);
+                createCharts(limit);
+                updateCharts(limit, data);
             },
             error: function(resultat, statut, erreur) {
                 console.log(erreur);
@@ -98,7 +76,44 @@ $(document).ready(function(){
 
     setHexazone();
     randomBox();
+    nodeTemplate = $( "#node_template").clone(true);
+    $( "#node_template" ).hide();
 });
+
+
+function addPhoneNode(nb_total_node, dataNode) {
+    //var nodeTemplate = $( "#node_template").clone(true);
+    $("[id^=nodePhone]").remove();
+    for (var i = 0; i < nb_total_node; i++) {
+        var newNode = nodeTemplate.clone(true);
+        var nodeData = JSON.parse(dataNode[i]);
+
+        newNode.attr('id', "nodePhone"+(i+1));
+
+        newNode.find(".circle_rank-number").html(i +1);
+        newNode.find(".phone_title").html(nodeData.modele);
+        newNode.find(".price").html(Math.min(...nodeData.prix)+" €");
+        newNode.find(".stats_img").attr("src", "pictures/phonePics/phonepic"+nodeData.id+".jpg");
+
+        newNode.find("#container").attr("id", "container"+(i+1));
+        newNode.find(".phone_taille").html(" - "+ nodeData.taille +" pouces");
+        newNode.find(".phone_stockage").html(" - "+ getStockageList(nodeData.stockage));
+        console.log(newNode);
+        //chartList[i].series[0].setData([nodeData.design, nodeData.puissance, nodeData.camera, nodeData.reseau, nodeData.solidite, nodeData.batterie]);
+        //console.log(chartList.length);
+        //$( "#result_section").children().append(newNode);
+        newNode.insertBefore($(".moreDetail"));
+
+    }
+}
+
+function updateCharts(nbCharts, data) {
+    for (var i = 0; i < nbCharts; i++) {
+        var nodeData = JSON.parse(data[i]);
+        //console.log()
+        chartList[i].series[0].setData([nodeData.design, nodeData.puissance, nodeData.camera, nodeData.reseau, nodeData.solidite, nodeData.batterie]);
+    }
+}
 
 function loadPhones(phone_liste) {
     console.log("reach");

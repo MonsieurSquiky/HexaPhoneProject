@@ -1,0 +1,185 @@
+[
+	{
+		"idPhone": 7,
+		"pros": [	"Ultra-Résistant et Waterproof",
+				"Une batterie exceptionnelle de plus de 2 jours",
+				"Un haut-parleur puissant et de qualité",
+				"Un Android 7 fluide et réactif",
+				"Technologie NFC (paiement sans contact) et Radio FM",
+				"Bande 4G B20"],
+		"cons": [	"Pas franchement élégant...",
+				"Assez lourd (247g) et épais (16.6mm)",
+				"Selfies pas terribles",
+				"Pas de capteur d'empreintes digitales",
+				"Pas de notifications LED"]
+	},
+	{
+		"idPhone": 19,
+		"pros": [	"Ultra-Résistant et Waterproof",
+				"Un design unique et superbe",
+				"Un Android 7 fluide et réactif",
+				"Technologie radio FM",
+				"Bande 4G B20"],
+		"cons": [	"Vidéos filmées de qualité médiocre",
+				"Un petit peu lourd (223g) et un peu épais (12.6mm)",
+				"Pas de notifications LED"]
+	},
+	{
+		"idPhone": 22,
+		"pros": [	"Ultra-Résistant et Waterproof",
+				"Un superbe écran AMOLED",
+				"Une batterie exceptionnelle de plus de 2 jours",
+				"Une double caméra arrière de très bonne qualité",
+				"Un Android 7 fluide et réactif",
+				"Technologie NFC (paiement sans contact) et Radio FM",
+				"Bande 4G B20"],
+		"cons": [	"Un peu épais (11.6mm)",
+				"Pas de notifications LED"]
+	},
+	{
+		"idPhone": 326,
+		"pros": [	"Un smartphone solide et résistant",
+				"Un écran assez grand de résolution 2K",
+				"Une caméra de bonne qualité",
+				"Un processeur super puissant",
+				"Un haut-parleur de qualité",
+				"Bande 4G B20 et la 700Mhz"],
+		"cons": [	"Pas d'emplacement pour carte SD",
+				"Pas de port Jack",
+				"La batterie ne tient qu'une journée"]
+	},
+	{
+		"idPhone": 333,
+		"pros": [	"Une double caméra arrière de très bonne qualité",
+				"Une très bonne batterie de 2 jours",
+				"Un haut-parleur de qualité"],
+		"cons": [	"Pas d'emplacement pour carte SD",
+				"Pas de Bande 4G B20"]
+	},
+	{
+		"idPhone": 334,
+		"pros": [	"Une caméra de bonne qualité",
+				"Un processeur super puissant",
+				"Une bonne batterie",
+				"Un très bon son",
+				"Bande 4G B20"],
+		"cons": [	"Pas d'emplacement pour carte SD",
+				"Pas de port Jack"]
+	},
+	{
+		"idPhone": 484,
+		"pros": [	"Léger et un design épuré",
+				"Un magnifique écran AMOLED",
+				"L'une des meilleures caméras du marché, aux couleurs vives (des images sublimes même en basse luminosité)",
+				"Une double caméra arrière pour l'effet Bokeh",
+				"L'une des plus puissantes machines (sinon la plus puissante) du marché",
+				"Une bonne batterie",
+				"Technologie NFC (paiement sans contact)",
+				"Bande 4G B20 et la 700Mhz"],
+		"cons": [	"Pas d'emplacement pour carte SD"]
+	},
+	{
+		"idPhone": 674,
+		"pros": [
+				"Une très bonne double caméra arrière",
+				"Un smartphone puissant",
+				"Un bon son",
+				"Bande 4G B20"],
+		"cons": [	"Pas d'emplacement pour carte SD"]
+	},
+	{
+		"idPhone": 683,
+		"pros": [	"Un design soigné très haut de gamme",
+				"Léger et compact",
+				"Un processeur super puissant",
+				"Un magnifique écran AMOLED",
+				"Une très bonne caméra, même en basse luminosité",
+				"La feature Z-Touch",
+				"Bande 4G B20"],
+		"cons": [	"Pas d'emplacement pour carte SD",
+				"Coque sensible aux rayures"]
+	},
+	{
+		"idPhone": 703,
+		"pros": [
+				"Léger et compact",
+				"Un processeur super puissant",
+				"Une excellente caméra, même en basse luminosité",
+				"La feature Z-Touch"],
+		"cons": [	"Pas d'emplacement pour carte SD",
+				"Ne possède pas la bande 4G B20"]
+	},
+	{
+		"idPhone": 712,
+		"pros": [	"Un smartphone solide et résistant",
+				"Un superbe écran AMOLED de résolution 2K",
+				"Une caméra de bonne qualité",
+				"Un processeur super puissant",
+				"Un haut-parleur stéréo tout simplement monstrueux : le meilleur du marché et de très loin",
+				"Technologie NFC (paiement sans contact)",
+				"Bande 4G B20 et 700Mhz"],
+		"cons": [
+				"La batterie ne tient qu'une journée"]
+	},
+	{
+		"idPhone": 724,
+		"pros": [
+				"Un écran géant de 6,44\" idéal pour les vidéos",
+				"Une batterie exceptionnelle de plus de 2 jours",
+				"Une double caméra arrière de très bonne qualité",
+				"Un Android 7 fluide et réactif",
+				"Technologie NFC (paiement sans contact) et Radio FM",
+				"Bande 4G B20"],
+		"cons": [	"Ne possède pas la bande 4G B20",
+				"Pas de notifications LED"]
+	},
+{
+		"idPhone": 725,
+		"pros": [
+				"Interface MIUI personnalisable ultra fluide",
+				"Assez résistant",
+				"Une excellente autonomie",
+				"Un haut-parleur produisant un son fort et de très bonne qualité",
+				"Bande 4G B20"],
+		"cons": [	"Pour chipoter, l'appareil photo n'est pas exceptionnel mais reste bon"]
+	},
+	{
+		"idPhone": 729,
+		"pros": [	"Fin et compact, design épuré",
+				"Une plus qu'excellente caméra aux couleurs chaudes et vibrantes",
+				"Une double caméra arrière pour l'effet Bokeh",
+				"L'une des plus puissantes machines du marché",
+				"Technologie NFC (paiement sans contact)"],
+		"cons": [	"Pas d'emplacement pour carte SD",
+				"Ne possède pas la bande 4G B20"]
+	},
+	{
+		"idPhone": 748,
+		"pros": [	"Petit et léger, il est pratique",
+				"Une excellente batterie de 2 jours",
+				"Une interface MIUI très fluide et personnalisable",
+				"Bande 4G B20"],
+		"cons": [	"Caméra trop juste en basse luminosité",
+				"Pas de charge rapide"]
+	},
+	{
+		"idPhone": 757,
+		"pros": [	"Un très bel écran OLED",
+				"Une double caméra arrière pour effet Bokeh et 3D",
+				"Une interface MIUI très fluide et personnalisable",
+				"Un smartphone puissant",
+				"Un excellent son"],
+		"cons": [	"Pas de notification LED",
+				"Pas de Bande 4G B20"]
+	},
+	{
+		"idPhone": 761,
+		"pros": [	"Petit et léger, il est pratique",
+				"Une interface MIUI très fluide et personnalisable",
+				"Bande 4G B20"],
+		"cons": [	"Caméra trop juste en basse luminosité",
+				"Coque en plastique et non en métal",
+				"Peut voir du mal avec les jeux les plus poussés",
+				"Pas de charge rapide"]
+	}
+]

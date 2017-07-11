@@ -13,37 +13,14 @@
             <link rel="stylesheet" href="phoneListstyle.css" />
             <link rel="stylesheet" href="hexacharts.css" />
             <link rel="stylesheet" href="style.css" />
+            <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
 
             <title> Choisis un smartphone </title>
         </head>
         <body>
             <header>
-                <nav class="navbar navbar-default top_menu">
-                      <div class="container-fluid">
-                        <div class="navbar-header">
-                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                          </button>
-                          <a class="navbar-brand navbar_logo" href="/index.html">
-                            <img src="pictures/HPlogo.png" class="main_logo" />
-                        </a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                          <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Accueil</a></li>
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
-                          </ul>
-                          <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                </nav>
+                <?php include("header.html"); ?>
             </header>
 
             <section class="main_section height_section light_blue">
@@ -58,50 +35,18 @@
                             D'une machine capable de faire tourner tous les jeux et applis mobiles ? <br>
                             Trouvez le ici, en 2 clics.
                         </p>
-                        <a class="button_perso main_button" href="phonefinder.html"> Chercher un smartphone </a>
+                        <a class="button_perso main_button" href="phonefinder.php"> Chercher un smartphone </a>
                     </div>
                     <div class="alone_block top_hexa col-xs-12 col-sm-6 col-md-6 col-lg-7">
-                        <div id="hexazone" class="hexa_block">
-                            <!--<img src="hexa_flat.png" class="logo_banner" />-->
-                            <div id="box1" class="box box-top">
-                                <img id="box1-img" alt="Qualité de l'écran"  src="pictures/logo_ecran.png" />
-                                <img id="box1-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_ecran_picked.png" />
-                                <span class="critere"> Design </span>
-                            </div>
-                            <div id="box2" class="box box-top-right">
-                                <img id="box2-img" alt="Puissance du smartphone"  src="pictures/logo_performances.png" />
-                                <img id="box2-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_performances_picked.png" />
-                                <span class="critere"> Puissance </span>
-                            </div>
-                            <div id="box3" class="box box-bottom-right">
-                                <img id="box3-img" alt="Qualité de la caméra"  src="pictures/logo_camera.png" />
-                                <img id="box3-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_camera_picked.png" />
-                                <span class="critere"> Caméra </span>
-                            </div>
-                            <div id="box4" class="box box-bottom">
-                                <img id="box4-img" alt="Connectivité du smartphone"  src="pictures/logo_connectivite.png" />
-                                <img id="box4-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_connectivite_picked.png" />
-                                <span class="critere"> Réseau </span>
-                            </div>
-                            <div id="box5" class="box box-bottom-left">
-                                <img id="box5-img" alt="Résistance du smartphone"  src="pictures/logo_solidite.png" />
-                                <img id="box5-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_solidite_picked.png" />
-                                <span class="critere"> Solidité </span>
-                            </div>
-                            <div id="box6" class="box box-top-left">
-                                <img id="box6-img" alt="Autonomie du smartphone"  src="pictures/logo_batterie.png" />
-                                <img id="box6-img-selected"alt="Qualité de l'écran choisi"  src="pictures/logo_batterie_picked.png" />
-                                <span class="critere"> Batterie </span>
-                            </div>
+                        <?php include("hexazone.html") ?>
+                        <div class="box-center phoneFinder">
+                            <a data-fancybox data-src="#hidden-content" class="" style="display:flex" href="javascript:;">
+                                <img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
+                            </a>
 
-                            <div class="box-center phoneFinder">
-                                <a data-fancybox data-src="#hidden-content" class="" style="display:flex" href="javascript:;">
-                                	<img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
-                                </a>
-
-                                <span class="liste_selection"> Cliquez, Trouvez </span>
-                            </div>
+                            <span class="liste_selection"> Cliquez, Trouvez </span>
                         </div>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -276,13 +221,13 @@
                             </div>
                         </div>
                         <div class="moreDetail flexblock">
-                            <a class="autoblock button_perso main_button" href="./phonefinder.html"> Plus de choix </a>
+                            <a class="autoblock button_perso main_button" href="./phonefinder.php"> Plus de choix </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+            <script src="hexascript.js"> </script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
             <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -290,7 +235,7 @@
             <script src="https://code.highcharts.com/highcharts-more.js"></script>
             <script src="https://code.highcharts.com/modules/exporting.js"></script>
             <script src="hexacharts.js"> </script>
-            <script src="hexascript.js"> </script>
+
             <script type="text/javascript">
 
                 $(document).ready(function(){
