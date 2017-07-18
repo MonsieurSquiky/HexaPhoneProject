@@ -14,9 +14,8 @@
             <title> Choisis un smartphone </title>
         </head>
         <body>
-            <header>
-                <?php include("header.html"); ?>
-            </header>
+
+            <?php include("header.html"); ?>
             <section class="main_section top_section light_blue">
                 <div class="top_hexa fullblock col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="hexa_module" class="">
@@ -121,6 +120,18 @@
                                 </div>
                                 <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 col-xs-7">
                                     <div id="container" class="hexachart"> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" hidden-sm hidden-md hidden-lg col-xs-12">
+                                    <div class="stats_content autoblock">
+                                        <!--
+                                        <p class=""> - Taille du smartphone </p>
+                                        <p class=""> - Versions disponibles </p>
+                                        <p class=""> - Autres options </p>
+                                        -->
+                                        <span class="button_perso main_button price button-xs"> Prix </span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="scroll-icon"> <img class="scroll-icon-im" src="pictures/down_arrow.png" alt="Devoiler avantages" /> </div>

@@ -47,3 +47,109 @@ table {
 }
 
 /* End of reset */
+
+* {
+    box-sizing: border-box;
+}
+.main_wrapper {
+    max-width: 100%;
+    margin: auto;
+}
+.img-box {
+    text-align: center;
+    font-size: 18px;
+    padding:15px;
+}
+.content-box {
+    text-align: left;
+    padding: 15px;
+}
+.small-box {
+    max-width: 450px;
+}
+.content-button {
+    text-align: left !important;
+    margin: 5px 0;
+}
+.onglet {
+    /*margin-left: 15px;*/
+}
+.progress {
+    margin-bottom: 10px;
+}
+.img-title {
+    padding-top: 7px;
+}
+
+.img-borderbox {
+    max-width:100%;
+
+    display: block;
+    margin: auto;
+}
+.bigpic {
+    max-height: 40vh;
+    min-height: 220px;
+}
+.price_button {
+    margin-top: 15px !important;
+}
+.right-glyph {
+    float: right;
+    display: inline-block;
+}
+
+.tight-tabs>li>a {
+    padding: 10px;
+}
+
+.large-container {
+    padding: 5px;
+}
+
+.datasheet>thead{
+    text-align: center;
+}
+
+.colorPhone-input{
+    position: relative;
+    margin-top: 20px !important;
+}
+.text-label {
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.colorPhone-label {
+    margin: 10px 0;
+    margin-left: 0 !important;
+}
+
+@media all and (min-width: 768px) {
+    .content-title {
+        margin-bottom: 15px;
+        margin-top: 10px;
+        display: block;
+    }
+    .content-button {
+        margin-top: 15px !important;
+    }
+    .bigpic {
+        max-height: 75vh;
+        min-height: 270px;
+    }
+    .main_wrapper-sm {
+        max-width: 75%;
+        margin: auto;
+    }
+    .datasheet tbody tr td{
+        padding-left: 15px;
+    }
+    .tight-tabs>li>a {
+        padding: 15px 30px;
+
+    }
+    .title-sm {
+        font-size: 20px;
+    }
+}

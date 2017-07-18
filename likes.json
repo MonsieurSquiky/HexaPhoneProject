@@ -42,7 +42,6 @@
 				"Un écran assez grand de résolution 2K",
 				"Une caméra de bonne qualité",
 				"Un processeur super puissant",
-				"Un haut-parleur de qualité",
 				"Bande 4G B20 et la 700Mhz"],
 		"cons": [	"Pas d'emplacement pour carte SD",
 				"Pas de port Jack",
@@ -62,6 +61,7 @@
 				"Un processeur super puissant",
 				"Une bonne batterie",
 				"Un très bon son",
+				"Technologie NFC (paiement sans contact)",
 				"Bande 4G B20"],
 		"cons": [	"Pas d'emplacement pour carte SD",
 				"Pas de port Jack"]
@@ -94,18 +94,17 @@
 				"Un processeur super puissant",
 				"Un magnifique écran AMOLED",
 				"Une très bonne caméra, même en basse luminosité",
-				"La feature Z-Touch",
+				"Capteur de rythme cardiaque",
 				"Bande 4G B20"],
 		"cons": [	"Pas d'emplacement pour carte SD",
-				"Coque sensible aux rayures"]
+				"Coque en verre sensible aux chutes"]
 	},
 	{
 		"idPhone": 703,
 		"pros": [
 				"Léger et compact",
 				"Un processeur super puissant",
-				"Une excellente caméra, même en basse luminosité",
-				"La feature Z-Touch"],
+				"Une excellente caméra, même en basse luminosité"],
 		"cons": [	"Pas d'emplacement pour carte SD",
 				"Ne possède pas la bande 4G B20"]
 	},

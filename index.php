@@ -19,10 +19,7 @@
             <title> Choisis un smartphone </title>
         </head>
         <body>
-            <header>
-                <?php include("header.html"); ?>
-            </header>
-
+            <?php include("header.html"); ?>
             <section class="main_section height_section light_blue">
                 <div class="wrapper wrapper_reverse row">
                     <div class=" text_block  col-xs-12 col-sm-6 col-md-6 col-lg-5">
