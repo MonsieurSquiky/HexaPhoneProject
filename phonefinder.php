@@ -102,20 +102,27 @@
                         <div class="circle_rank">
                             <h2 class="circle_rank-number"> 1 <h2>
                         </div>
+
                         <div class="block_content">
+                            <a class="phonelink" href="test.html">
                             <div class="phone_title">
-                                <h2> Nom du smartphone</h2>
+
+                                    <h2>Nom du smartphone </h2>
+
                             </div>
+                            </a>
                             <div class="row flex-row">
                                 <div class="img_block phoneList_col col-sm-3 col-md-3 col-lg-3 col-xs-4">
-                                    <img class="stats_img" src="pictures/phonePics/phonepic753.jpg" />
+                                    <a class="phonelink" href="">
+                                        <img class="stats_img" src="pictures/phonePics/phonepic753.jpg" />
+                                    </a>
                                 </div>
                                 <div class="phoneList_col col-sm-4 col-md-4 col-lg-4 hidden-xs">
                                     <div class="stats_content autoblock">
                                         <p class="phone_taille"> - Taille du smartphone </p>
                                         <p class="phone_stockage"> - Versions disponibles </p>
                                         <p class="phone_option"> - Autres options </p>
-                                        <span class="button_perso main_button price"> Prix </span>
+                                        <a class="phonelink" href="test.html"> <span class="button_perso main_button price"> Prix </span> </a>
                                     </div>
                                 </div>
                                 <div class=" phoneList_col col-sm-5 col-md-5 col-lg-5 col-xs-7">
@@ -130,7 +137,7 @@
                                         <p class=""> - Versions disponibles </p>
                                         <p class=""> - Autres options </p>
                                         -->
-                                        <span class="button_perso main_button price button-xs"> Prix </span>
+                                         <a class="phonelink" href="test.html"> <span class="button_perso main_button price button-xs"> Prix </span> </a>
                                     </div>
                                 </div>
                             </div>

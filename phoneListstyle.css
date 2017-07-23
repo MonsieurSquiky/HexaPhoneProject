@@ -18,6 +18,7 @@
     margin: 0px;
     height: 183px;
 }
+
 .phoneList_col {
     display: flex;
     margin: auto;
@@ -89,8 +90,10 @@
     height: 35px;
     z-index: 99999999999999001;
 }
-
-.img_block {
+.img_block a {
+    display:flex;
+}
+.img_block, .img_block a {
 
     height: 100% !important;
     margin: 0px;

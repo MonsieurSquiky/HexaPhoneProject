@@ -20,31 +20,33 @@
         </head>
         <body>
             <?php include("header.html"); ?>
-            <section class="main_section height_section light_blue">
-                <div class="wrapper wrapper_reverse row">
-                    <div class=" text_block  col-xs-12 col-sm-6 col-md-6 col-lg-5">
-                        <p class="big_title">
-                            Un besoin,<br>
-                            Un smartphone
-                        </p>
-                        <p class="description secundary_text">
-                            Besoin d'un smartphone avec une batterie de plus de 48h d'autonomie ? D'un photophone de qualité ?
-                            D'une machine capable de faire tourner tous les jeux et applis mobiles ? <br>
-                            Trouvez le ici, en 2 clics.
-                        </p>
-                        <a class="button_perso main_button" href="phonefinder.php"> Chercher un smartphone </a>
-                    </div>
-                    <div class="alone_block top_hexa col-xs-12 col-sm-6 col-md-6 col-lg-7">
-                        <?php include("hexazone.html") ?>
-                        <div class="box-center phoneFinder">
-                            <a data-fancybox data-src="#hidden-content" class="" style="display:flex" href="javascript:;">
-                                <img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
-                            </a>
+            <section class="main_section height_section light_blue" style="padding-top:52px;">
+                <div class="container">
+                    <div class="wrapper wrapper_reverse row">
+                        <div class=" text_block  col-xs-12 col-sm-6 col-md-6 col-lg-5">
+                            <p class="big_title">
+                                Un besoin,<br>
+                                Un smartphone
+                            </p>
+                            <p class="description secundary_text">
+                                Besoin d'un smartphone avec une batterie de plus de 48h d'autonomie ? D'un photophone de qualité ?
+                                D'une machine capable de faire tourner tous les jeux et applis mobiles ? <br>
+                                Trouvez le ici, en 2 clics.
+                            </p>
+                            <a class="button_perso main_button" href="phonefinder.php"> Chercher un smartphone </a>
+                        </div>
+                        <div class="alone_block top_hexa col-xs-12 col-sm-6 col-md-6 col-lg-7">
+                            <?php include("hexazone.html") ?>
+                            <div class="box-center phoneFinder">
+                                <a data-fancybox data-src="#hidden-content" class="" style="display:flex" href="javascript:;">
+                                    <img alt="Trouvez votre smartphone idéal"  src="pictures/search_icon.png" />
+                                </a>
 
-                            <span class="liste_selection"> Cliquez, Trouvez </span>
+                                <span class="liste_selection"> Cliquez, Trouvez </span>
+                            </div>
                         </div>
                     </div>
-                    </div>
+
                 </div>
             </section>
             <!--

@@ -134,6 +134,7 @@ function addPhoneNode(nb_total_node, dataNode) {
         newNode.find("#container").attr("id", "container"+(i+1));
         newNode.find(".phone_taille").html(" - "+ nodeData.taille +" pouces");
         newNode.find(".phone_stockage").html(" - "+ getStockageList(nodeData.stockage));
+        newNode.find(".phonelink").attr("href", "phonesheetTemplate.php?id="+nodeData.id);
 
         var pros = newNode.find(".pros");
         var cons = newNode.find(".cons");

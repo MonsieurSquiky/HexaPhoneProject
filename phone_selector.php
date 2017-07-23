@@ -6,7 +6,6 @@ try {
     //$bdd = new PDO('mysql:host=sql.free.fr;dbname=moryfodecisse', 'moryfodecisse', 'mory10');
 
 }
-
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
