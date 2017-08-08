@@ -121,7 +121,6 @@
                                     <div class="stats_content autoblock">
                                         <p class="phone_taille"> - Taille du smartphone </p>
                                         <p class="phone_stockage"> - Versions disponibles </p>
-                                        <p class="phone_option"> - Autres options </p>
                                         <a class="phonelink" href="test.html"> <span class="button_perso main_button price"> Prix </span> </a>
                                     </div>
                                 </div>
@@ -188,8 +187,8 @@
                   $( "#slider-price" ).slider({
                     range: "min",
                     min: 90,
-                    max: 900,
-                    value: 450,
+                    max: 550,
+                    value: 550,
                     slide: function( event, ui ) {
                       $( "#price" ).val( "Prix max : " + ui.value + " €"  );
                     }

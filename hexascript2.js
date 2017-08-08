@@ -11,7 +11,7 @@ var searchname = {  "design": false,
             "batterie": false};
 
 var search = [0, 0, 0, 0, 0, 0];
-
+var memory_code = [16, 32, 64, 128];
 var highlight = [0, 0, 0, 0, 0, 0];
 // $( ".disable_area" ).hide();
 $( "#box1-img-selected" ).hide();
@@ -43,8 +43,9 @@ $(document).ready(function(){
     $( ".phoneFinder" ).click(function(e) {
         e.preventDefault();
         $("#result_section").show();
+        $( ".moreNodes" ).show(``);
         var prix = $( "#slider-price" ).slider(( "option", "value" ));
-        var stockage = $( "#slider-memory" ).slider(( "option", "value" ));
+        stockage = $( "#slider-memory" ).slider(( "option", "value" ));
         var sizeMin = $( "#slider-screen" ).slider(( "option", "values"))[0];
         var sizeMax = $( "#slider-screen" ).slider(( "option", "values"))[1];
         var resolutionMin = $( "#slider-resolution" ).slider(( "option", "value" ));
@@ -128,12 +129,12 @@ function addPhoneNode(nb_total_node, dataNode) {
 
         newNode.find(".circle_rank-number").html(i +1);
         newNode.find(".phone_title").html(nodeData.modele);
-        newNode.find(".price").html(Math.min(...nodeData.prix)+" €");
+        newNode.find(".price").html(nodeData.prix[getIndiceMinPrice(nodeData.stockage, memory_code[stockage])]+" €");
         newNode.find(".stats_img").attr("src", "pictures/phonePics/phonepic"+nodeData.id+".jpg");
 
         newNode.find("#container").attr("id", "container"+(i+1));
         newNode.find(".phone_taille").html(" - "+ nodeData.taille +" pouces");
-        newNode.find(".phone_stockage").html(" - "+ getStockageList(nodeData.stockage));
+        newNode.find(".phone_stockage").html(" - "+ getStockageList(nodeData.stockage, getIndiceMinPrice(nodeData.stockage, memory_code[stockage]), nodeData.prix, "nodePhone"+(i+1), nodeData.id));
         newNode.find(".phonelink").attr("href", "phonesheetTemplate.php?id="+nodeData.id);
 
         var pros = newNode.find(".pros");
@@ -195,17 +196,37 @@ function compareNombres(a, b) {
   return a - b;
 }
 
-function getStockageList(stockage) {
+function getIndiceMinPrice(array_stockage, min_stockage) {
+    for (var i=0; i < array_stockage.length; i++) {
+        if (array_stockage[i] >= min_stockage)
+            return i;
+    }
+    return i;
+}
+
+function getStockageList(stockage, highlight_indice, prix, node, idPhone) {
     var chaine = "";
     var checker = [];
-    stockage.sort(compareNombres);
+    //stockage.sort(compareNombres);
     for (var i =0; i < stockage.length; i++) {
         if (!checker.includes(stockage[i]))
-            chaine += stockage[i] + "Go / ";
+            if (i == highlight_indice)
+                chaine += '<button id="version'+idPhone+i+'" type="button" class="btn btn-danger btn-xs" onclick="changePrice('+i +','+ prix[i] +','+ idPhone +',\''+ node +'\')">' + stockage[i] + ' Go </button> / ';
+            else
+                chaine += '<button id="version'+idPhone+i+'" type="button" class="btn btn-default btn-xs" onclick="changePrice('+i +','+ prix[i] +','+ idPhone +',\''+ node +'\')">' + stockage[i] + ' Go </button> / ';
         checker.push(stockage[i]);
     }
     chaine = chaine.substring(0,chaine.length-2);
     return chaine;
+}
+
+function changePrice(indice, prix, idPhone, idNode) {
+    var i=0;
+    var node = $( "#"+idNode );
+
+    node.find("[id^=version]").attr("class", "btn btn-default btn-xs");
+    node.find("#version"+idPhone+indice).attr("class", "btn btn-danger btn-xs");
+    node.find(".price").html(prix+" €");
 }
 
 function setHexazone () {

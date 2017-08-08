@@ -45,11 +45,15 @@ $selection = ["false", "false", "false"];
 while ($donnees = $phone_data->fetch()) {
     $prix = [];
     $stockage = [];
-    $phone_prix = $bdd->query('SELECT * FROM smartphonestocks WHERE idPhone='.$donnees["idPhone"]);
+    $phone_prix = $bdd->query('SELECT * FROM smartphonestocks WHERE idPhone='.$donnees["idPhone"].' ORDER BY stockage');
     $phone_specs_base = $bdd->query('SELECT * FROM smartphonespecs WHERE idPhone='.$donnees["idPhone"]);
     $phone_specs= $phone_specs_base->fetch();
+    $priceBool = false;
 
     while ($donneesstocks = $phone_prix->fetch()) {
+        if ($donneesstocks['prix'] < $prixmax AND $donneesstocks['stockage'] >= $memory_code[$stockagemin])
+            $priceBool = true;
+
         if ($donneesstocks['stock'] < 0)
             continue;
         array_push($prix, $donneesstocks['prix']);
@@ -69,7 +73,7 @@ while ($donnees = $phone_data->fetch()) {
     $waterproofBool = ($waterproof  == 'true') ? ($phone_specs["resistance"] != "-") : true;
 
     //
-    if (min($prix) < $prixmax AND max($stockage) >= $memory_code[$stockagemin] AND $jackBool AND $tailleBool AND $b20Bool AND $ruggedBool AND $fingerprintBool AND $dualsimBool AND $sdcardBool AND $waterproofBool) {
+    if ($priceBool AND $jackBool AND $tailleBool AND $b20Bool AND $ruggedBool AND $fingerprintBool AND $dualsimBool AND $sdcardBool AND $waterproofBool) {
         $score = 0;
         $nb_critere = 0;
         if ($design == 1) {

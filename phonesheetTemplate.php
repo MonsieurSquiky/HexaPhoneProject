@@ -1,8 +1,15 @@
 <!DOCTYPE html>
     <html style="width:100%;height:100%">
     <?php
-    include("header.html");
+    function getColorCode($note) {
+        if ($note>= 8)
+            return "success";
+        elseif ($note >= 6)
+            return "warning";
+        else
+            return "danger";
 
+    }
     $id = isset($_GET["id"]) ? $_GET["id"] : 683;
     $file = file_get_contents('likes.json');
     $jsonLikes = json_decode($file);
@@ -43,13 +50,14 @@
             <meta charset="utf-8" />
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <meta name="viewport" content="width=device-width" />
-            <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link rel="stylesheet" href="phoneListstyle.css">
             <link rel="stylesheet" href="phonesheet.css" />
             <title> Acheter <?php echo $notes["phoneName"]; ?> </title>
 
         </head>
         <body>
+            <?php include("header.html"); ?>
             <section style="padding-top:52px;">
                 <div class="container main_wrapper">
                     <div class="row" >
@@ -103,8 +111,8 @@
                     </div>
                 </div>
             </section>
-            <div class="container large-container">
-              <ul class="nav nav-tabs tight-tabs title-sm">
+            <div class="container ">
+              <ul class="nav nav-tabs tab-justified title-sm">
                 <li class="active"><a data-toggle="tab" href="#picshow">Presentation</a></li>
                 <li><a data-toggle="tab" href="#menu2">Fiche Technique</a></li>
                 <li><a data-toggle="tab" href="#menu3">Notre avis</a></li>
@@ -112,7 +120,7 @@
               </ul>
 
               <div class="tab-content">
-                <div id="picshow" class="tab-pane fade in active container">
+                <div id="picshow" class="tab-pane fade in active ">
 <?php           $i = 1;
                 while (file_exists("pictures/phone-".$id."/showpic".$i.".jpg")) {
                     ?>
@@ -194,7 +202,7 @@
                                     <td id="camera">
                                         <?php echo $specs["cameraCapteur"]; ?> <br />
                                         <?php echo $specs["cameraType"]; ?> <br />
-                                        <?php echo $specs["cameraResolution"]; ?> Mpx
+                                        <?php echo $specs["cameraResolution"]; ?> Mpx pour la camera avant
                                     </td>
                                 </tr>
                                 <tr>
@@ -365,7 +373,7 @@
                                                     Design :
                                                 </span>
                                                 <div class="progress">
-                                                      <div id="design-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                                      <div id="design-bar" class="progress-bar progress-bar-<?php echo getColorCode($notes["design"]);?>" role="progressbar" aria-valuenow="40"
                                                       aria-valuemin="0" aria-valuemax="10" style="width:<?php echo $notes["design"]*10; ?>%">
                                                         <b> <?php echo $notes["design"]; ?> / 10 </b>
                                                       </div>
@@ -376,7 +384,7 @@
                                                     Puissance :
                                                 </span>
                                                 <div class="progress">
-                                                      <div id="puissance-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                                      <div id="puissance-bar" class="progress-bar progress-bar-<?php echo getColorCode($notes["puissance"]);?>" role="progressbar" aria-valuenow="40"
                                                       aria-valuemin="0" aria-valuemax="10" style="width:<?php echo $notes["puissance"]*10; ?>%">
                                                         <b>  <?php echo $notes["puissance"]; ?> / 10 </b>
                                                       </div>
@@ -387,7 +395,7 @@
                                                     Batterie :
                                                 </span>
                                                 <div class="progress">
-                                                      <div id="batterie-bar" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40"
+                                                      <div id="batterie-bar" class="progress-bar progress-bar-<?php echo getColorCode($notes["batterie"]);?>" role="progressbar" aria-valuenow="40"
                                                       aria-valuemin="0" aria-valuemax="10" style="width:<?php echo $notes["batterie"]*10; ?>%">
                                                         <b> <?php echo $notes["batterie"]; ?> / 10 </b>
                                                       </div>
@@ -398,7 +406,7 @@
                                                     Camera :
                                                 </span>
                                                 <div class="progress">
-                                                      <div  id="camera-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                                      <div  id="camera-bar" class="progress-bar progress-bar-<?php echo getColorCode($notes["camera"]);?>" role="progressbar" aria-valuenow="40"
                                                       aria-valuemin="0" aria-valuemax="10" style="width:<?php echo $notes["camera"]*10; ?>%">
                                                         <b> <?php echo $notes["camera"]; ?> / 10 </b>
                                                       </div>
@@ -409,7 +417,7 @@
                                                     Solidite :
                                                 </span>
                                                 <div id="solidite-bar" class="progress">
-                                                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40"
+                                                      <div class="progress-bar progress-bar-<?php echo getColorCode($notes["solidite"]);?>" role="progressbar" aria-valuenow="40"
                                                       aria-valuemin="0" aria-valuemax="10" style="width:<?php echo $notes["solidite"]*10; ?>%">
                                                         <b> <?php echo $notes["solidite"]; ?> / 10 </b>
                                                       </div>
@@ -420,7 +428,7 @@
                                                     Reseau :
                                                 </span>
                                                 <div  id="reseau-bar" class="progress">
-                                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                                      <div class="progress-bar progress-bar-<?php echo getColorCode($notes["reseau"]);?>" role="progressbar" aria-valuenow="40"
                                                       aria-valuemin="0" aria-valuemax="10" style="width:<?php echo $notes["reseau"]*10; ?>%">
                                                         <b> <?php echo $notes["reseau"]; ?> / 10 </b>
                                                       </div>
@@ -470,8 +478,8 @@
 
             -->
             </section>
-            <script src="jquery/jquery-3.2.1.min.js"></script>
-            <script src="bootstrap/js/bootstrap.min.js"></script>
+            <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
             <script>
             function setPrice(prix) {
                 $( "#prix" ).html(prix+" €");

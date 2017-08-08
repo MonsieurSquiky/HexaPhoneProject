@@ -1,0 +1,10 @@
+// Primary mixin
+@mixin pictures {
+    img {
+    @include picture(100, 100);
+    }
+}
+@mixin picture($width, $height) {
+    max-height: $height;
+    max-width: $width;
+}

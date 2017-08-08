@@ -1,0 +1,39 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color-dark: #1058aa;
+$primary-color-light: #1b7dd9;
+$primary-color-text: white;
+
+* {
+    box-sizing: border-box;
+}
+body {
+  font: 100% $font-stack;
+}
+
+.section-colored {
+    color: $primary-color-text;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1b7dd9+2,004da0+100,1058aa+100,1058aa+100,1058aa+100,1058aa+100,1058aa+100 */
+    background: $primary-color-dark; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, $primary-color-dark, $primary-color-light); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, $primary-color-dark, $primary-color-light); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, $primary-color-dark, $primary-color-light); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, $primary-color-dark, $primary-color-light); /* Standard syntax */
+
+}
+.top-section {
+    padding: 52px;
+}
+.icon-band img {
+    max-height: 200px;
+}
+.slick-slide img {
+    max-height: 100px;
+    max-width: 450px;
+    padding: 0px 100px;
+
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: red;
+}
