@@ -100,46 +100,27 @@
                     <p class="section_title blue_title"> D'où viennent nos smartphones ? </p>
                 </div>
                 -->
-                <div class="container">
-
-
                 <div class="wrapper row">
 
-                    <div class=" col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class=" col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class=" slider slick-slider brand_slider">
                             <div class="slick-slide ">
-                            <img class="desc_img brand brand-0" src="pictures/brandLogo/logo-xiaomi.png" alt="Logo Xiaomi" />
+                            <img class="desc_img brand brand-0" src="pictures/logo_xiaomi.png" alt="Logo Xiaomi" />
                             </div>
                             <div class="slick-slide ">
-                            <img class="desc_img brand brand-1 brand-mini" src="pictures/brandLogo/logo_lenovo.png" alt="Logo Lenovo" />
+                            <img class="desc_img brand brand-1 brand-mini" src="pictures/logo_lenovo.png" alt="Logo Lenovo" />
                             </div>
                             <div class="slick-slide ">
-                            <img class="desc_img brand brand-2 brand-mini" src="pictures/brandLogo/logo-leeco.png" alt="Logo Leeco" />
-                            </div>
-                            <div class="slick-slide ">
-                            <img class="desc_img brand brand-3 brand-mini" src="pictures/brandLogo/logo-blackview.png" alt="Logo Leeco" />
-                            </div>
-                            <div class="slick-slide ">
-                            <img class="desc_img brand brand-4 brand-mini" src="pictures/brandLogo/logo-nubia.png" alt="Logo Leeco" />
-                            </div>
-                            <div class="slick-slide ">
-                            <img class="desc_img brand brand-5 brand-mini" src="pictures/brandLogo/logo-oneplus.png" alt="Logo Leeco" />
-                            </div>
-                            <div class="slick-slide ">
-                            <img class="desc_img brand brand-6 brand-mini" src="pictures/brandLogo/logo-umidigi.png" alt="Logo Leeco" />
+                            <img class="desc_img brand brand-2 brand-mini" src="pictures/logo_leeco.png" alt="Logo Leeco" />
                             </div>
                         </div>
                     </div>
-
-                 </div>
-                 <div class="row">
-                     <div class="text_block nomargin col-sm-6 col-md-5 col-lg-4 col-xs-12">
-                         <span class="promote_title"> Il y a moins bien, mais c'est plus cher </span>
-                         <p class="promote"> Les smartphones que nous vendont sont des Xiaomi, des LeEco, des Lenovo et ceux de bien d'autres marques chinoises.
-                         Vous ne les connaissez peut être pas mais ces marques produisent des téléphones haut de gamme d'une grande qualité à prix imbattables. </p>
-                         <a class="button_perso main_button blue_button" href="#hexacore"> Plus de détails </a>
-                     </div>
-                 </div>
+                    <div class="text_block nomargin col-sm-6 col-md-5 col-lg-4 col-xs-12">
+                        <span class="promote_title"> Il y a moins bien, mais c'est plus cher </span>
+                        <p class="promote"> Les smartphones que nous vendont sont des Xiaomi, des LeEco, des Lenovo et ceux de bien d'autres marques chinoises.
+                        Vous ne les connaissez peut être pas mais ces marques produisent des téléphones haut de gamme d'une grande qualité à prix imbattables. </p>
+                        <a class="button_perso main_button blue_button" href="#hexacore"> Plus de détails </a>
+                    </div>
                  </div>
             </section>
 
@@ -270,41 +251,11 @@
                       // left
                     });
                     $(".brand_slider").slick({
-
-                        centerMode: true,
-                        autoplay: true,
-                        autoplaySpeed: 2000,
-                        variableWidth: true,
-                        infinite: true,
-                         centerPadding: '60px',
-                         slidesToShow: 5,
-                         slidesToScroll: 1,
-                         responsive: [
-                        {
-                          breakpoint: 768,
-                          settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 3
-                          }
-                        },
-                        {
-                          breakpoint: 480,
-                          settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 1
-                          }
-                        }
-                      ]
-/*
                         centerMode: true,
                         autoplay: true,
                         autoplaySpeed: 1500,
                         arrows: false
-
+                        /*
                         dots: false,
                         infinite: true,
                         centerMode: true,
