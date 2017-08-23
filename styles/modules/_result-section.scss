@@ -1,7 +1,10 @@
-.wrapper, .wrapper_centered {
+#result_section {
+    display: flex;
+    background-color: $background-color-dark;
+}
+.wrapper_centered {
     margin: auto;
 }
-
 .phone_stat {
 
     max-width: 350px;
@@ -30,6 +33,28 @@
     padding-right: 0px;
 
 }
+
+.hexachart, .hexachart * {
+    position: relative;
+    margin: auto;
+    max-width: 99% !important;
+    max-height: 99% !important;
+    width: 200px;
+    height: 200px;
+}
+
+.stats_content {
+    vertical-align: top;
+    font-size: 14px !important;
+    line-height: 18px !important;
+}
+
+.autoblock {
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
 
 .comments {
 	list-style-type: none;
@@ -137,6 +162,10 @@
     position: relative;
     top: -10px;
 
+}
+.moreNodes {
+    display: flex;
+    margin-bottom: 20px;
 }
 .price {
     display: block;

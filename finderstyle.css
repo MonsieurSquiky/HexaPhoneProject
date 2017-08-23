@@ -106,6 +106,12 @@ header {
 .slider_row {
     max-width: 80%;
 }
+.checkbox {
+    line-height: 18px;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
 .wrapper, .wrapper_centered {
     margin: auto;
 }
@@ -118,11 +124,7 @@ header {
     text-align: left;
 
 }
-.checkbox {
-    line-height: 18px;
-    font-size: 14px;
-    margin-top: 2px;
-}
+
 .inline_block {
     display: inline-block;
     margin: auto;

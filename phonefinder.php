@@ -35,64 +35,7 @@
             <section id="filter_section" class="main_section">
                 <div class="wrapper">
 
-                    <div class="row">
-                        <p>
-                          <label for="amount">Budget :</label>
-                        </p>
-                        <div id="slider-price" ></div>
-                        <input type="text" id="price" class="inputs" readonly style="border:0; font-weight:bold;">
-                    </div>
-                    <div class="row">
-                        <p> Capacité de stockage : </p>
-                        <div id="slider-memory" ></div>
-                        <input type="text" id="memory" class="inputs" readonly style="border:0; font-weight:bold;">
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <p> Ecran : </p>
-                            <div id="slider-screen"  class="slider_row"></div>
-                            <input type="text" id="screen" class="inputs" readonly style="border:0; font-weight:bold;">
-                            <p> Résolution : </p>
-                            <div id="slider-resolution" class="slider_row" ></div>
-                            <input type="text" id="resolution" class="inputs" readonly style="border:0; font-weight:bold;">
-
-                        </div>
-                        <div class="col-xs-6 left-align">
-                            Connectivité :
-
-                            <div id="b20" class="checkbox">
-                                <label><input type="checkbox" value="" checked="checked">4G SFR/Orange</label>
-                            </div>
-
-                            <div id="fingerprint" class="checkbox">
-                                <label><input type="checkbox" value="">Capteur d'empreinte</label>
-                            </div>
-
-                            <div id="dualsim" class="checkbox">
-                                <label><input type="checkbox" value="">Double-Sim</label>
-                            </div>
-                            <div id="sdcard" class="checkbox">
-                                <label><input type="checkbox" value="">Carte SD</label>
-                            </div>
-                            <div id="jack" class="checkbox">
-                                <label><input type="checkbox" value="">Prise Audio Jack</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            Matériaux :
-                            <div id="waterproof" class="checkbox">
-                                <label><input type="checkbox" value="">Waterproof</label>
-                            </div>
-                            <div id="rugged" class="checkbox">
-                                <label><input type="checkbox" value="">Ultra résistant</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <a href="#result_section" class="js-scrollTo">
-                            <span id="" class="button_perso main_button phoneFinder"> Valider les critères secondaires </span>
-                        </a>
-                    </div>
+                    <?php include("modules/filterzone/filterzone.html"); ?>
                 </div>
             </section>
             <section id="result_section" class="main_section dark_grey">
@@ -178,55 +121,8 @@
             <script src="https://code.highcharts.com/modules/exporting.js"></script>
             <script src="hexacharts.js"> </script>
             <script src="hexascript2.js"></script>
+            <script src="modules/filterzone/filterzone.js"></script>
             <script type="text/javascript">
-
-                $( function() {
-                    var memory_code = [16, 32, 64, 128];
-                    var screen_code = ["Moyenne", "Grand", "Très Grand"];
-                    var resolution_code = ["HD", "Full HD", "2K", "4K"];
-                  $( "#slider-price" ).slider({
-                    range: "min",
-                    min: 90,
-                    max: 550,
-                    value: 550,
-                    slide: function( event, ui ) {
-                      $( "#price" ).val( "Prix max : " + ui.value + " €"  );
-                    }
-                  });
-                  $( "#slider-memory" ).slider({
-                      range: "max",
-                      min: 0,
-                      max: 3,
-                      value: 0,
-                      slide: function( event, ui ) {
-                        $( "#memory" ).val( memory_code[ui.value] + " Go minimum"  );
-                      }
-                  });
-                  $( "#slider-resolution" ).slider({
-                      range: "max",
-                      min: 0,
-                      max: 3,
-                      value: 0,
-                      slide: function( event, ui ) {
-                        $( "#resolution" ).val( "Au moins "+resolution_code[ui.value]  );
-                      }
-                  });
-                  $( "#slider-screen" ).slider({
-                      range: true,
-                      min: 4.5,
-                      max: 7,
-                      values: [4.5, 7],
-                      step: 0.1,
-                      slide: function( event, ui ) {
-                        $( "#screen" ).val( "Entre " + ui.values[0] + "\" et " + ui.values[1] + "\"");
-                      }
-                  });
-                    $( "#price" ).val( "Prix max : " + $( "#slider-price" ).slider( "value") +
-                    "€" );
-                    $( "#memory" ).val( " 16 Go minimun" );
-                    $( "#screen" ).val( "Toutes les tailles" );
-                    $( "#resolution" ).val( "Au moins HD" );
-                } );
 
                 $('.js-scrollTo').on('click', function(e) { // Au clic sur un Ã©lÃ©ment
                     e.preventDefault();

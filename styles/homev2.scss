@@ -1,39 +1,137 @@
 $font-stack:    Helvetica, sans-serif;
-$primary-color-dark: #1058aa;
-$primary-color-light: #1b7dd9;
-$primary-color-text: white;
+
+// Colors
+$primary-color-second: #00c6ff;
+$primary-color-first: #0072ff;
+$primary-color-intermediate: #0072ff;
+$background-color-first: #f8f8f8;
+$background-color-dark: #2c3e50;
+$text-color-first: #ecf0f1;
+$text-color-second: #2c3e50;
+$icon-color: #2980b9;
+$icon-color-selected: #c0392b;
+
+$warning-color: #c0392b;
+
+// Gaps
+$header-height: 100px;
+$appeal-height: 80px;
+$gutter-size: 15px;
+
+// Images
+$background-image: "https://s-media-cache-ak0.pinimg.com/originals/14/25/e8/1425e86aa19aae0b7372537f6851b657.jpg";
+
+@import 'modules/reset';
+@import 'modules/hexastyle';
+@import 'modules/brandslider';
+@import 'modules/filterzone';
+@import 'modules/pictures';
+@import 'modules/hexagon';
+@import 'modules/topcarousel';
+@import 'modules/button';
+@import 'modules/result-section';
+
+@mixin background($color1, $color2, $color3) {
+    background: $primary-color-second; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, $color3, $color2, $color1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, $color3, $color2, $color1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, $color3, $color2, $color1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, $color3, $color2, $color1); /* Standard syntax */
+}
+@mixin top-section-height() {
+    height: 100%;
+    height: -webkit-calc(100vh - #{$appeal-height});
+    height:    -moz-calc(100vh - #{$appeal-height});
+    height:         calc(100vh - #{$appeal-height});
+    max-height: -webkit-calc(100vh - #{$appeal-height});
+    max-height:    -moz-calc(100vh - #{$appeal-height});
+    max-height:         calc(100vh - #{$appeal-height});
+}
+
 
 * {
     box-sizing: border-box;
+
 }
-body {
-  font: 100% $font-stack;
+html, body, header {
+  //font: 16px $font-stack;
+  max-width: 100%;
+  min-width: 310px;
 }
+
+section, .container, .block-centered{
+    max-width: 100%;
+}
+
+.navbar-default {
+    max-height: $header-height;
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron h2 {
+    font-size: 2.5em;
+}
+
+.subtitle-white {
+    color: white;
+}
+
+
+
+.section-fullheight {
+    min-height: 100vh;
+    display: flex;
+}
+.background-top {
+    @include top-section-height();
+    top: 0px;
+}
+.background-image {
+    width: 100%;
+    position: absolute;
+    background-image: url($background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+}
+
+#result-background {
+    height: 100%;
+    min-height: 100vh;
+
+}
+
+.wrapper-flex {
+    display:flex;
+    //@include top-section-height();
+}
+
+.block-centered {
+    margin: auto;
+}
+
+.container-top {
+    padding-top: $header-height;
+}
+.breezing {
+    padding-top: $gutter-size;
+    padding-bottom: $gutter-size;
+}
+
 
 .section-colored {
-    color: $primary-color-text;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1b7dd9+2,004da0+100,1058aa+100,1058aa+100,1058aa+100,1058aa+100,1058aa+100 */
-    background: $primary-color-dark; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, $primary-color-dark, $primary-color-light); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, $primary-color-dark, $primary-color-light); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, $primary-color-dark, $primary-color-light); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, $primary-color-dark, $primary-color-light); /* Standard syntax */
-
+    color: $text-color-first;
+    @include background($primary-color-first, $primary-color-intermediate, $primary-color-second);
 }
+
 .top-section {
-    padding: 52px;
-}
-.icon-band img {
-    max-height: 200px;
-}
-.slick-slide img {
-    max-height: 100px;
-    max-width: 450px;
-    padding: 0px 100px;
-
+    @include top-section-height();
+    padding-top: $header-height;
 }
 
-.slick-prev:before,
-.slick-next:before {
-    color: red;
+@media all and (min-width:1280px) {
+    font-size: 20px;
 }

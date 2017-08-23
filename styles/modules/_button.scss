@@ -1,0 +1,37 @@
+.button-main {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-width: 36px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease 0s, box-shadow 0.2s ease 0s;
+    //font: 500 14px/20px Roboto,sans-serif;
+    padding: 8px 30px;
+}
+
+.button_perso {
+    border: 0px none;
+    border-radius: 2px;
+    box-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    outline: 0px none;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.main_button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-width: 36px;
+    max-width: 300px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease 0s, box-shadow 0.2s ease 0s;
+    font: 500 14px/20px Roboto,sans-serif;
+    padding: 8px;
+    color: white;
+    background-color: $warning-color;
+}

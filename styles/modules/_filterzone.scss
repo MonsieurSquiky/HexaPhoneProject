@@ -1,0 +1,32 @@
+#filter_section {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    padding-left: $gutter-size;
+    padding-right: $gutter-size;
+}
+.inputs {
+    max-width: 95%;
+    font-size: 14px;
+    color: #1058aa;
+    text-align: center;
+}
+.ui-slider {
+    //max-width: 80vw;
+    margin: auto;
+}
+.slider_row {
+    max-width: 80%;
+}
+.checkbox {
+    line-height: 18px;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.left-align {
+    text-align: left;
+
+}

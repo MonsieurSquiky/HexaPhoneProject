@@ -1,0 +1,61 @@
+$hexagon-width: 60px;
+$border-width: 5px;
+$border-color: #333333;
+$hexagon-color: #ffffff;
+
+.hexagon {
+  position: relative;
+  width: $hexagon-width;
+  height: $hexagon-width * 0.57733;
+  background-color: $hexagon-color;
+  margin: ($hexagon-width * 0.57733)/2 0;
+  border-left: solid $border-width $border-color;
+  border-right: solid $border-width $border-color;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: $hexagon-width * 0.7071;
+  height: $hexagon-width * 0.7071;
+  z-index: 1;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: ($hexagon-width * 0.146447) - $border-width;
+}
+
+.hexagon:before {
+    top: -0.353553 * $hexagon-width;
+    border-top: solid 1.41421*$border-width $border-color;
+    border-right: solid 1.41421*$border-width $border-color;
+}
+
+.hexagon:after {
+    bottom: -0.353553 * $hexagon-width;
+    border-bottom: solid 1.41421*$border-width $border-color;
+    border-left: solid 1.41421*$border-width $border-color;
+}
+
+.hexaicon {
+    position: absolute;
+    width: $hexagon-width;
+    height: $hexagon-width * 0.5;
+    margin: ($hexagon-width * 0.57733)/2 0;
+    font-size: $hexagon-width * 0.5;
+    text-align: center;
+    color: $icon-color;
+    z-index: 9999;
+}
+
+@media all and (max-width: 480px) {
+    .hexagon {
+        margin: ($hexagon-width * 0.57733)/2 0;
+    }
+    .hexalabel {
+        text-align: center;
+    }
+
+}

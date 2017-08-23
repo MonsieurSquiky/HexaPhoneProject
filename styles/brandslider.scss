@@ -1,0 +1,16 @@
+.slider {
+
+    margin: 20px auto;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
+
+.slick-slide {
+  margin: 0px ;
+}
+
+.slick-slide img {
+  max-width: 150px;
+  margin: auto;
+}

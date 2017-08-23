@@ -1,0 +1,54 @@
+@mixin top-carousel-height() {
+    height: 100%;
+    height: -webkit-calc(100vh - #{$header-height} - #{$appeal-height});
+    height:    -moz-calc(100vh - #{$header-height} - #{$appeal-height});
+    height:         calc(100vh - #{$header-height} - #{$appeal-height});
+    max-height: -webkit-calc(100vh - #{$header-height} - #{$appeal-height});
+    max-height:    -moz-calc(100vh - #{$header-height} - #{$appeal-height});
+    max-height:         calc(100vh - #{$header-height} - #{$appeal-height});
+}
+
+
+.top-carousel, .carousel-slide {
+    @include top-carousel-height();
+}
+
+.carousel-slide {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.carousel-slide * {
+    max-height: 100%;
+}
+
+.carousel-block {
+    padding-top: $gutter-size;
+    padding-bottom: $gutter-size;
+}
+
+.carousel-text {
+    max-width: 350px;
+    margin:auto;
+}
+
+
+@media all and (max-width: 768px) {
+        .carousel-pic {
+            width : 190px;
+        }
+}
+/*
+@media all and (min-width: 768px) and (max-width: 1280px){
+        .carousel-pic {
+            width : 350px;
+        }
+}
+
+@media all and (min-width: 1280px) {
+        .carousel-pic {
+            width : 425px;
+        }
+}
+*/
